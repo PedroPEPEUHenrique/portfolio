@@ -3,361 +3,345 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pedro Henrique — Dev in Formation</title>
-<meta name="description" content="Pedro Henrique · Desenvolvedor Web & Mobile em formação. Goiânia, GO." />
+<title>Pedro Henrique · Full Stack Developer</title>
+<meta name="description" content="Pedro Henrique · Full Stack Developer. Aplicações web e mobile eficientes, escaláveis e seguras, com foco em DevOps e CI/CD. Goiânia, GO, Brasil." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Barra superior -->
-<nav id="nav">
-  <div class="logo">
-    <span class="logo-mark"></span>
-    PH/DEV
-  </div>
-  <div class="nav-links">
-    <a href="#about">Sobre</a>
-    <a href="#projects">Projetos</a>
-    <a href="#skills">Stack</a>
-    <a href="#experience">Trajetória</a>
-    <a href="#contact">Contato</a>
-  </div>
-  <a href="#contact" class="nav-cta">Let's Talk ↗</a>
-</nav>
+<div class="layout">
 
-<!-- HERO -->
-<header class="hero" id="home">
-  <div class="checker-strip"></div>
-
-  <div class="hero-meta reveal">
-    <span><span class="dot-live"></span>DISPONÍVEL · GOIÂNIA/GO</span>
-    <span>EST. 2024 · 02</span>
-    <span>v1.0 — 2026</span>
-  </div>
-
-  <div class="hero-main">
-    <h1 class="hero-title reveal">
-      <span>PEDRO</span><br>
-      <span class="outlined">HENRIQUE</span><br>
-      <span class="accent">/ dev.</span>
-    </h1>
-    <div class="hero-side reveal">
-      <strong>DEV IN FORMATION</strong>
-      Web & Mobile · ADS · técnico em desenvolvimento. Construindo
-      a transição do suporte técnico pra engenharia de software com
-      foco em arquitetura limpa e boas práticas.
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <a href="#home" class="brand">
+        <span class="brand-txt">
+          <span class="brand-name">Pedro Henrique</span>
+          <span class="brand-role">Full Stack Developer</span>
+        </span>
+      </a>
+      <p class="brand-tag">
+        Aplicações web e mobile eficientes, escaláveis e seguras, com
+        cultura DevOps do código à produção.
+      </p>
+      <span class="chip chip-status"><span class="dot-live"></span>Disponível para projetos</span>
     </div>
-  </div>
 
-  <div class="hero-scroll reveal">
-    <span>↓ SCROLL</span>
-    <div class="scroll-indicator"></div>
-    <span>ROLE PARA COMEÇAR</span>
-  </div>
-</header>
+    <nav class="side-nav">
+      <a href="#home"><span class="idx">01</span>Início</a>
+      <a href="#services"><span class="idx">02</span>Serviços</a>
+      <a href="#projects"><span class="idx">03</span>Projetos</a>
+      <a href="#stack"><span class="idx">04</span>Stack</a>
+      <a href="#about"><span class="idx">05</span>Sobre</a>
+      <a href="#contact"><span class="idx">06</span>Contato</a>
+    </nav>
 
-<!-- Carrossel de Linguagens -->
-<div class="marquee">
-  <div class="marquee-track">
-    <span><span class="marquee-item">TypeScript</span></span>
-    <span><span class="marquee-item outline">React</span></span>
-    <span><span class="marquee-item">Next.js</span></span>
-    <span><span class="marquee-item outline">Node.js</span></span>
-    <span><span class="marquee-item">Python</span></span>
-    <span><span class="marquee-item outline">Django</span></span>
-    <span><span class="marquee-item">PostgreSQL</span></span>
-    <span><span class="marquee-item outline">n8n</span></span>
-    <!-- loop do carrossel -->
-    <span><span class="marquee-item">TypeScript</span></span>
-    <span><span class="marquee-item outline">React</span></span>
-    <span><span class="marquee-item">Next.js</span></span>
-    <span><span class="marquee-item outline">Node.js</span></span>
-    <span><span class="marquee-item">Python</span></span>
-    <span><span class="marquee-item outline">Django</span></span>
-    <span><span class="marquee-item">PostgreSQL</span></span>
-    <span><span class="marquee-item outline">n8n</span></span>
-  </div>
+    <div class="sidebar-bottom">
+      <div class="socials">
+        <a href="https://github.com/PedroPEPEUHenrique" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg class="ic" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.68.92.68 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 12 2z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/pedropepeuhenrique/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg class="ic" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17V9.99H6V17h2.34zM7.17 8.9a1.36 1.36 0 1 0 0-2.72 1.36 1.36 0 0 0 0 2.72zM18 17v-3.85c0-2.05-.44-3.63-2.84-3.63-1.15 0-1.93.63-2.24 1.23h-.03V9.99H10.6V17h2.34v-3.47c0-.92.17-1.8 1.31-1.8 1.12 0 1.14 1.05 1.14 1.86V17H18z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/dev.pepeu/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg class="ic" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="mailto:flashpedro123@gmail.com" aria-label="Email">
+          <svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+        </a>
+      </div>
+      <div class="side-loc">Goiânia · GO · Brasil</div>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- INTRO -->
+    <section id="home" class="intro">
+      <span class="eyebrow">Full Stack Developer · DevOps</span>
+      <h1 class="intro-title">
+        Construo aplicações web &amp; mobile
+        <span class="accent">e cuido delas até a produção.</span>
+      </h1>
+      <p class="intro-sub">
+        Sou Pedro Henrique. Transformo desafios complexos em soluções digitais
+        eficientes, escaláveis e seguras, do frontend à API, com deploys
+        automatizados por pipelines de CI/CD.
+      </p>
+      <div class="intro-actions">
+        <a href="#contact" class="btn btn-primary">
+          Iniciar um projeto
+          <svg class="ic" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#projects" class="btn btn-ghost">Ver projetos</a>
+      </div>
+      <div class="intro-stats">
+        <div class="stat"><strong>Desenvolvimento</strong><span>Web · Mobile · APIs</span></div>
+        <div class="stat"><strong>DevOps &amp; CI/CD</strong><span>Docker · Jenkins · Actions</span></div>
+        <div class="stat"><strong>13+ repositórios</strong><span>@PedroPEPEUHenrique</span></div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-head">
+        <span class="eyebrow">2 | Serviços.</span>
+        <h2 class="section-title">Como posso ajudar o seu negócio</h2>
+        <p class="section-lead">
+          Soluções sob medida, do primeiro protótipo à aplicação em produção.
+          Código limpo, entregas claras e foco no resultado.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-icon">
+            <svg class="ic" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Aplicações Web</h3>
+          <p>Sites e sistemas completos com React, Next.js e Node.js, rápidos, responsivos e prontos para escalar.</p>
+          <ul>
+            <li>Landing pages e páginas de vendas</li>
+            <li>Painéis e sistemas internos</li>
+            <li>Plataformas full stack</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg class="ic" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3>Apps Mobile</h3>
+          <p>Aplicativos multiplataforma com React Native e Expo, com a mesma base de código para Android e iOS.</p>
+          <ul>
+            <li>Apps de pedidos e ecommerce</li>
+            <li>Interfaces com NativeWind / Tailwind</li>
+            <li>Integração com APIs e pagamentos</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg class="ic" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+          </div>
+          <h3>APIs &amp; Backend</h3>
+          <p>APIs REST bem estruturadas, banco de dados modelado e arquitetura pensada para durar e crescer com segurança.</p>
+          <ul>
+            <li>APIs REST com Node.js / Django</li>
+            <li>PostgreSQL, MySQL e Supabase</li>
+            <li>Autenticação e boas práticas</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">
+            <svg class="ic" viewBox="0 0 24 24"><path d="M4 4h6v6H4z"/><path d="M14 4h6v6h-6z"/><path d="M4 14h6v6H4z"/><path d="M17 14v6"/><path d="M14 17h6"/></svg>
+          </div>
+          <h3>Automação Digital</h3>
+          <p>Automatizo tarefas repetitivas e integrações entre ferramentas com n8n, liberando mais tempo para o que importa.</p>
+          <ul>
+            <li>Fluxos automatizados com n8n</li>
+            <li>Integrações entre sistemas</li>
+            <li>Notificações e rotinas</li>
+          </ul>
+        </article>
+
+        <article class="service-card service-wide">
+          <div class="service-icon">
+            <svg class="ic" viewBox="0 0 24 24"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/></svg>
+          </div>
+          <div class="service-wide-body">
+            <h3>DevOps &amp; CI/CD</h3>
+            <p>
+              Levo suas aplicações do código à produção com pipelines
+              automatizados, conteinerização e cultura DevSecOps. Deploys ágeis,
+              consistentes e seguros, do primeiro commit ao ambiente final.
+            </p>
+            <ul class="service-wide-list">
+              <li>Pipelines de CI/CD com Jenkins</li>
+              <li>Conteinerização com Docker</li>
+              <li>Automação de deploy e rotinas</li>
+              <li>Segurança da informação (DevSecOps)</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-head">
+        <span class="eyebrow">3 | Projetos.</span>
+        <h2 class="section-title">Alguns trabalhos recentes</h2>
+        <p class="section-lead">Uma seleção do que venho construindo. Todos os códigos estão abertos no GitHub.</p>
+      </div>
+
+      <div class="projects-grid">
+        <a class="project-card" href="https://github.com/PedroPEPEUHenrique/PortalConectaEscolar" target="_blank" rel="noopener">
+          <div class="project-top">
+            <h3>Portal Conecta Escolar</h3>
+            <svg class="ic project-link" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </div>
+          <p>Plataforma educacional com API REST para gestão de atividades escolares e da comunidade, reunindo alunos, responsáveis e instituição num só lugar.</p>
+          <div class="tags"><span>Next.js</span><span>React</span><span>Node.js</span><span>API REST</span></div>
+        </a>
+
+        <a class="project-card" href="https://github.com/PedroPEPEUHenrique/lanche-expresso" target="_blank" rel="noopener">
+          <div class="project-top">
+            <h3>Lanche Expresso</h3>
+            <svg class="ic project-link" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </div>
+          <p>App mobile de ecommerce para delivery, construído com React Native, Expo e NativeWind. Catálogo, carrinho e fluxo de pedido pensados para o celular.</p>
+          <div class="tags"><span>React Native</span><span>Expo</span><span>NativeWind</span><span>Mobile</span></div>
+        </a>
+
+        <a class="project-card" href="https://github.com/PedroPEPEUHenrique/Renderiz" target="_blank" rel="noopener">
+          <div class="project-top">
+            <h3>Renderiz</h3>
+            <svg class="ic project-link" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </div>
+          <p>Framework Python para interfaces web/mobile de alta performance, com Virtual DOM e componentes reutilizáveis. Um projeto para entender cada peça por dentro.</p>
+          <div class="tags"><span>Python</span><span>Framework</span><span>Virtual DOM</span></div>
+        </a>
+
+        <a class="project-card" href="https://github.com/PedroPEPEUHenrique/GameNeonChaos" target="_blank" rel="noopener">
+          <div class="project-top">
+            <h3>GameNeonChaos</h3>
+            <svg class="ic project-link" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </div>
+          <p>Space shooter para navegador em JavaScript, com ondas de inimigos, chefes, upgrades e gameplay procedural otimizado com apoio de IA.</p>
+          <div class="tags"><span>JavaScript</span><span>Game Dev</span><span>Feito com IA</span></div>
+        </a>
+
+        <a class="project-card" href="https://github.com/PedroPEPEUHenrique/PageVendas" target="_blank" rel="noopener">
+          <div class="project-top">
+            <h3>Page Back End Guide</h3>
+            <svg class="ic project-link" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </div>
+          <p>Página de vendas com foco em conversão, construída com HTML e CSS. Estrutura leve, rápida e direta ao ponto.</p>
+          <div class="tags"><span>UpSell</span><span>CSS</span><span>Landing Page</span></div>
+        </a>
+
+        <a class="project-card project-more" href="https://github.com/PedroPEPEUHenrique" target="_blank" rel="noopener">
+          <div class="project-top">
+            <h3>Ver tudo no GitHub</h3>
+            <svg class="ic project-link" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </div>
+          <p>Mais repositórios, estudos em andamento e experimentos com TypeScript, arquitetura limpa e automações.</p>
+          <div class="tags"><span>@PedroPEPEUHenrique</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack">
+      <div class="section-head">
+        <span class="eyebrow">4 | Stack.</span>
+        <h2 class="section-title">Ferramentas que uso no dia a dia</h2>
+      </div>
+
+      <div class="stack-groups">
+        <div class="stack-group">
+          <h4>Frontend</h4>
+          <div class="chips">
+            <span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span>
+            <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">React Native</span><span class="chip">Tailwind</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h4>Backend</h4>
+          <div class="chips">
+            <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">Python</span><span class="chip">Django</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h4>Bancos de dados</h4>
+          <div class="chips">
+            <span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">SQL Server</span><span class="chip">Supabase</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h4>DevOps &amp; Ferramentas</h4>
+          <div class="chips">
+            <span class="chip">Docker</span><span class="chip">Jenkins</span><span class="chip">GitHub Actions</span>
+            <span class="chip">CI/CD</span><span class="chip">DevSecOps</span><span class="chip">Git &amp; GitHub</span>
+            <span class="chip">Vercel</span><span class="chip">n8n</span><span class="chip">Figma</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-head">
+        <span class="eyebrow">5 | Sobre.</span>
+        <h2 class="section-title">Do suporte técnico ao código</h2>
+      </div>
+      <div class="about-text">
+        <p>
+          Desenvolvedor Full Stack, atuo de ponta a ponta no ciclo de vida do
+          software: combino entrega rápida de aplicações com arquitetura robusta
+          e evolutiva, apoiada em práticas sólidas de Clean Code. Sou graduando em
+          Análise e Desenvolvimento de Sistemas (ADS) e Técnico em Desenvolvimento
+          Web &amp; Mobile.
+        </p>
+        <p>
+          Tenho forte direcionamento para a cultura DevOps e DevSecOps contínuo.
+          Estruturo pipelines de CI/CD com Jenkins, faço a conteinerização de
+          aplicações com Docker e automatizo fluxos de trabalho, garantindo
+          deploys ágeis, consistentes e alinhados às melhores práticas de
+          segurança da informação.
+        </p>
+        <p>
+          Minha base vem do suporte técnico, onde treinei um olhar analítico para
+          diagnóstico, estabilidade e causa raiz. Busco unir essa visão estratégica
+          e rigor técnico na construção de produtos de alto impacto que juntem
+          performance, usabilidade e excelência em engenharia de software.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="section-head">
+        <span class="eyebrow">6 | Contato.</span>
+        <h2 class="section-title">Vamos construir algo juntos?</h2>
+        <p class="section-lead">Conte sua ideia e retorno o mais rápido possível.</p>
+      </div>
+      <a href="mailto:flashpedro123@gmail.com" class="btn btn-primary btn-lg">
+        <svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+        flashpedro123@gmail.com
+      </a>
+
+      <div class="contact-links">
+        <a class="contact-link" href="https://www.linkedin.com/in/pedropepeuhenrique/" target="_blank" rel="noopener">
+          <svg class="ic" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17V9.99H6V17h2.34zM7.17 8.9a1.36 1.36 0 1 0 0-2.72 1.36 1.36 0 0 0 0 2.72zM18 17v-3.85c0-2.05-.44-3.63-2.84-3.63-1.15 0-1.93.63-2.24 1.23h-.03V9.99H10.6V17h2.34v-3.47c0-.92.17-1.8 1.31-1.8 1.12 0 1.14 1.05 1.14 1.86V17H18z"/></svg>
+          <div><strong>LinkedIn</strong><span>/in/pedropepeuhenrique</span></div>
+        </a>
+        <a class="contact-link" href="https://github.com/PedroPEPEUHenrique" target="_blank" rel="noopener">
+          <svg class="ic" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.68.92.68 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 12 2z"/></svg>
+          <div><strong>GitHub</strong><span>@PedroPEPEUHenrique</span></div>
+        </a>
+        <a class="contact-link" href="https://www.instagram.com/dev.pepeu/" target="_blank" rel="noopener">
+          <svg class="ic" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <div><strong>Instagram</strong><span>@dev.pepeu</span></div>
+        </a>
+      </div>
+
+      <footer>
+        <span>© 2026 Pedro Henrique</span>
+        <span>Full Stack Developer · Goiânia · BR</span>
+      </footer>
+    </section>
+
+  </main>
 </div>
-
-<!-- Sobre -->
-<section id="about">
-  <div class="section-header reveal">
-    <div class="section-num">01 / SOBRE</div>
-    <h2 class="section-title">Do suporte<br>para o <em>código</em>.</h2>
-  </div>
-
-  <div class="about-grid">
-    <div class="about-text reveal">
-      <p class="lead">
-        Olho analítico treinado no <em>suporte técnico</em>, aplicado agora
-        em aplicações web e mobile que precisam funcionar, escalar e
-        envelhecer bem.
-      </p>
-      <p>
-        Estou em formação em Análise e Desenvolvimento de Sistemas
-        (ADS) e Técnico em Desenvolvimento Web & Mobile. Passei pelo
-        suporte técnico antes de virar a chave pra desenvolvimento,
-        e trago dessa base uma paranoia saudável por estabilidade,
-        logs claros e reproduzir bugs até entender a causa raiz.
-      </p>
-      <p>
-        Hoje ando mergulhado em <em>TypeScript</em>, <em>Arquitetura Limpa</em> e
-        automações com <em>n8n</em>. Gosto de construir do zero pra entender
-        cada peça: APIs, integrações, mini-projetos front-end, jogos
-        web com suporte de IA. Nas horas vagas: <em>F1</em>, games e música
-        alta.
-      </p>
-    </div>
-
-    <aside class="about-card reveal">
-      <h3>// INFO.sys</h3>
-      <div class="info-row"><span class="key">Nome</span><span class="val">Pedro Henrique</span></div>
-      <div class="info-row"><span class="key">Base</span><span class="val">Goiânia · BR</span></div>
-      <div class="info-row"><span class="key">Formação</span><span class="val">ADS + Téc. Web/Mobile</span></div>
-      <div class="info-row"><span class="key">Atuação</span><span class="val">Suporte → Dev</span></div>
-      <div class="info-row"><span class="key">Status</span><span class="val accent">◆ Aberto a oportunidades</span></div>
-      <div class="info-row"><span class="key">Fuel</span><span class="val">Café · F1 · Code</span></div>
-    </aside>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <div class="section-header reveal">
-    <div class="section-num">02 / PROJETOS</div>
-    <h2 class="section-title">Pista <em>aberta</em>.<br>Laboratório <em>ativo</em>.</h2>
-  </div>
-
-  <div class="projects-list stagger">
-
-    <a class="project" href="https://github.com/PedroPEPEUHenrique/PortalConectaEscolar" target="_blank" rel="noopener">
-      <div class="project-num">/ 001</div>
-      <div class="project-info">
-        <h3 class="project-title">Portal Conecta Escolar</h3>
-        <p class="project-desc">
-          Plataforma web voltada ao ambiente escolar; pensada pra
-          conectar alunos, responsáveis e instituição num só lugar.
-          Projeto com foco em usabilidade, fluxo de informação claro
-          e arquitetura preparada pra escalar.
-        </p>
-        <div class="project-tags">
-          <span>Web</span><span>Full-Stack</span><span>EdTech</span>
-        </div>
-      </div>
-      <div class="project-arrow">→</div>
-    </a>
-
-    <a class="project" href="https://github.com/PedroPEPEUHenrique/lanche-expresso" target="_blank" rel="noopener">
-      <div class="project-num">/ 002</div>
-      <div class="project-info">
-        <h3 class="project-title">Lanche Expresso</h3>
-        <p class="project-desc">
-          Sistema de pedidos pra lanchonete. Catálogo, carrinho e
-          fluxo de compra pensados pra ser rápido de usar no
-          balcão ou no celular. Um exercício prático em UX de
-          e-commerce e modelagem de dados.
-        </p>
-        <div class="project-tags">
-          <span>Web</span><span>Pedidos</span><span>UX</span><span>CRUD</span>
-        </div>
-      </div>
-      <div class="project-arrow">→</div>
-    </a>
-
-    <a class="project" href="https://github.com/PedroPEPEUHenrique/GameNeonChaos" target="_blank" rel="noopener">
-      <div class="project-num">/ 003</div>
-      <div class="project-info">
-        <h3 class="project-title">GameNeonChaos</h3>
-        <p class="project-desc">
-          Mecânicas de arcade desenvolvidas com suporte de IA como
-          ferramenta de estudo. Experimento prático em como integrar
-          IA no fluxo de dev sem perder o controle criativo do projeto.
-        </p>
-        <div class="project-tags">
-          <span>HTML</span><span>Game Dev</span><span>AI-assisted</span>
-        </div>
-      </div>
-      <div class="project-arrow">→</div>
-    </a>
-
-    <a class="project" href="https://github.com/PedroPEPEUHenrique" target="_blank" rel="noopener">
-      <div class="project-num">/ +</div>
-      <div class="project-info">
-        <h3 class="project-title">Ver todos no GitHub</h3>
-        <p class="project-desc">
-          Repositório público com estudos em andamento, experimentos
-          com TypeScript, Clean Architecture e automações com n8n.
-        </p>
-        <div class="project-tags">
-          <span>@PedroPEPEUHenrique</span>
-        </div>
-      </div>
-      <div class="project-arrow">↗</div>
-    </a>
-
-  </div>
-</section>
-
-<!-- Skills -->
-<section id="skills">
-  <div class="section-header reveal">
-    <div class="section-num">03 / STACK</div>
-    <h2 class="section-title">O <em>pit</em> <br>de ferramentas.</h2>
-  </div>
-
-  <div class="skills-wrap reveal">
-    <div class="skill-cell"><div class="skill-cat">Lang</div><div class="skill-name">HTML5</div></div>
-    <div class="skill-cell"><div class="skill-cat">Lang</div><div class="skill-name">CSS3</div></div>
-    <div class="skill-cell"><div class="skill-cat">Lang</div><div class="skill-name">JavaScript</div></div>
-    <div class="skill-cell"><div class="skill-cat">Lang</div><div class="skill-name">TypeScript</div></div>
-    <div class="skill-cell"><div class="skill-cat">Lang</div><div class="skill-name">Python</div></div>
-    <div class="skill-cell"><div class="skill-cat">Framework</div><div class="skill-name">React</div></div>
-    <div class="skill-cell"><div class="skill-cat">Framework</div><div class="skill-name">Next.js</div></div>
-    <div class="skill-cell"><div class="skill-cat">Runtime</div><div class="skill-name">Node.js</div></div>
-    <div class="skill-cell"><div class="skill-cat">Framework</div><div class="skill-name">Django</div></div>
-    <div class="skill-cell"><div class="skill-cat">Database</div><div class="skill-name">MySQL</div></div>
-    <div class="skill-cell"><div class="skill-cat">Database</div><div class="skill-name">PostgreSQL</div></div>
-    <div class="skill-cell"><div class="skill-cat">Database</div><div class="skill-name">SQL Server</div></div>
-    <div class="skill-cell"><div class="skill-cat">Backend</div><div class="skill-name">Supabase</div></div>
-    <div class="skill-cell"><div class="skill-cat">Tool</div><div class="skill-name">Git & GitHub</div></div>
-    <div class="skill-cell"><div class="skill-cat">Tool</div><div class="skill-name">Figma</div></div>
-    <div class="skill-cell"><div class="skill-cat">Automation</div><div class="skill-name">n8n</div></div>
-  </div>
-
-  <div class="learning-strip reveal">
-    <span class="label">◆ STUDY LAP</span>
-    <span class="items">
-      <span>Cybersecurity</span> ·
-      <span>Arquitetura Limpa</span> ·
-      <span>Automação Digital</span>
-    </span>
-  </div>
-</section>
-
-<!-- experiência -->
-<section id="experience">
-  <div class="section-header reveal">
-    <div class="section-num">04 / TRAJETÓRIA</div>
-    <h2 class="section-title">A <em>volta</em><br>até aqui.</h2>
-  </div>
-
-  <div class="timeline stagger">
-
-    <div class="timeline-item current">
-      <div class="timeline-date">2025 — PRESENTE</div>
-      <h3 class="timeline-title">Estagiário de Suporte → Dev</h3>
-      <div class="timeline-org">Celetus</div>
-      <p class="timeline-desc">
-        Migrando da linha de frente do suporte técnico pro
-        desenvolvimento. Vivência real com estabilidade de sistemas,
-        diagnóstico e triagem — agora traduzindo isso em código com
-        foco em arquitetura e boas práticas.
-      </p>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">EM CURSO</div>
-      <h3 class="timeline-title">Análise e Desenvolvimento de Sistemas</h3>
-      <div class="timeline-org">Graduação · ADS</div>
-      <p class="timeline-desc">
-        Fundamentos em engenharia de software, banco de dados,
-        algoritmos e arquitetura — combinados com a formação
-        técnica paralela em Desenvolvimento Web & Mobile.
-      </p>
-    </div>
-
-    <div class="timeline-item">
-      <div class="timeline-date">TÉCNICO</div>
-      <h3 class="timeline-title">Desenvolvimento Web & Mobile</h3>
-      <div class="timeline-org">Formação técnica</div>
-      <p class="timeline-desc">
-        Base prática em front-end, back-end e mobile. Construção
-        de projetos do zero, versionamento com Git/GitHub e
-        primeiros contatos com integrações e APIs.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- contato -->
-<section class="contact" id="contact">
-  <div class="reveal">
-    <div class="section-num" style="margin-bottom: 40px;">05 / CONTATO</div>
-    <h2 class="contact-big">
-      <span class="outlined">Bora</span><br>
-      <a href="mailto:pedro@exemplo.com">construir.</a>
-    </h2>
-  </div>
-
-  <div class="contact-links stagger">
-    <a class="contact-link" href="https://www.linkedin.com/in/pedropepeuhenrique/" target="_blank" rel="noopener">
-      <div>
-        <div class="contact-link-name">LinkedIn</div>
-        <div class="contact-link-handle">/in/pedropepeuhenrique</div>
-      </div>
-      <span class="contact-arrow">↗</span>
-    </a>
-    <a class="contact-link" href="https://github.com/PedroPEPEUHenrique" target="_blank" rel="noopener">
-      <div>
-        <div class="contact-link-name">GitHub</div>
-        <div class="contact-link-handle">@PedroPEPEUHenrique</div>
-      </div>
-      <span class="contact-arrow">↗</span>
-    </a>
-    <a class="contact-link" href="https://www.instagram.com/dev.pepeu/" target="_blank" rel="noopener">
-      <div>
-        <div class="contact-link-name">Instagram</div>
-        <div class="contact-link-handle">@dev.pepeu</div>
-      </div>
-      <span class="contact-arrow">↗</span>
-    </a>
-    <a class="contact-link" href="mailto:seu-email@aqui.com">
-      <div>
-        <div class="contact-link-name">Email</div>
-        <div class="contact-link-handle">pedrogear15@gmail.com</div>
-      </div>
-      <span class="contact-arrow">↗</span>
-    </a>
-  </div>
-</section>
-
-<footer>
-  <div class="sig">PEDRO HENRIQUE <span>◆</span> 2026</div>
-  <div>GOIÂNIA · GO</div>
-  <div>v1.0 — LAP 01</div>
-</footer>
-
-<script>
-
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  });
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-
-  document.querySelectorAll('.reveal, .stagger').forEach(el => io.observe(el));
-
-
-  window.addEventListener('load', () => {
-    document.querySelectorAll('.hero .reveal').forEach((el, i) => {
-      setTimeout(() => el.classList.add('in'), 100 + i * 120);
-    });
-  });
-</script>
 
 </body>
 </html>
