@@ -16,6 +16,8 @@
   const canHover = matchMedia('(hover: hover)').matches;
 
   const EASE = 'expo.out';
+  /* a abertura usa uma curva menos explosiva que o resto do site */
+  const OPEN_EASE = 'power2.out';
 
   /* ---------------------------------------------------------
      0 · Ícones (Lucide) — antes de qualquer medida de layout
@@ -100,16 +102,18 @@
     gsap.set('.hero [data-reveal]', { opacity: 1 });
 
     const words = splitWords($('.hero-title'));
-    const tl = gsap.timeline({ defaults: { ease: EASE } });
+    const tl = gsap.timeline({ defaults: { ease: OPEN_EASE } });
 
-    tl.from('.nav-inner > *', { y: -20, opacity: 0, duration: .9, stagger: .06 })
-      .fromTo('.hero .chip-live', { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: .7 }, .1)
-      .from(words, { yPercent: 118, duration: 1.1, stagger: .05 }, .16)
-      .fromTo('.hero-visual', { scale: .9, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.2 }, .3)
-      .fromTo('.hero-sub', { y: 22, opacity: 0 }, { y: 0, opacity: 1, duration: .9 }, .48)
-      .fromTo('.hero-tabs', { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: .8 }, .56)
-      .fromTo('.hero-actions', { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: .8 }, .64)
-      .fromTo('.hero-stats', { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: .9 }, .72);
+    /* Abertura contida: deslocamentos curtos e sobrepostos, para o
+       topo assentar como um bloco só em vez de desfilar item a item. */
+    tl.from('.nav-inner > *', { y: -10, opacity: 0, duration: .7, stagger: .04 })
+      .fromTo('.hero .chip-live', { y: 8, opacity: 0 }, { y: 0, opacity: 1, duration: .6 }, .08)
+      .from(words, { yPercent: 108, duration: .85, stagger: .035 }, .14)
+      .fromTo('.hero-visual', { scale: .97, opacity: 0 }, { scale: 1, opacity: 1, duration: .95 }, .2)
+      .fromTo('.hero-sub', { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: .75 }, .34)
+      .fromTo('.hero-tabs', { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: .7 }, .42)
+      .fromTo('.hero-actions', { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: .7 }, .48)
+      .fromTo('.hero-stats', { y: 12, opacity: 0 }, { y: 0, opacity: 1, duration: .75 }, .54);
   }
 
   /* ---------------------------------------------------------
@@ -167,7 +171,7 @@
     const heroCore = $('.hero-visual .em-core');
     if (heroCore) {
       gsap.to(heroCore, {
-        rotation: 120, transformOrigin: '50% 50%', ease: 'none',
+        rotation: 55, transformOrigin: '50% 50%', ease: 'none',
         scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
       });
     }
