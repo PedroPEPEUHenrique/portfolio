@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Pedro Henrique | Desenvolvedor Full Stack Júnior</title>
-<meta name="description" content="Pedro Henrique, Desenvolvedor Full Stack Júnior. Front-end, back-end e deploy: React, Next.js, React Native, Node.js, Python/Django, bancos de dados e CI/CD. Goiânia, GO." />
-<meta name="theme-color" content="#08090c" />
+<meta name="description" content="Pedro Henrique, Desenvolvedor Full Stack Júnior. Frontend, backend e deploy: React, Next.js, React Native, Node.js, Python, Django, bancos de dados e CI/CD. Goiânia, GO." />
+<meta name="theme-color" content="#ffffff" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,42 +16,35 @@
 </head>
 <body>
 
-<div class="grain" aria-hidden="true"></div>
-
 <!-- ============================================================
-     NAV — logo à esquerda, links ao centro, 2 botões à direita
+     NAV
      ============================================================ -->
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#topo" class="brand" aria-label="Pedro Henrique — ir para o topo">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" class="brand-svg">
-          <circle cx="20" cy="20" r="18" class="bm-ring" />
-          <path d="M11 26 L20 11 L29 26 Z" class="bm-tri" />
-        </svg>
-        <b>PH</b>
-      </span>
+    <a href="#topo" class="brand" aria-label="Pedro Henrique, ir para o topo">
+      <span class="brand-mark">PH</span>
     </a>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="#processo">Processo</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#stack">Stack</a>
-      <a href="#sobre">Sobre</a>
-    </nav>
-
     <div class="nav-actions">
-      <a class="btn btn-ghost btn-sm" href="https://github.com/PedroPEPEUHenrique" target="_blank" rel="noopener">
+      <a class="btn btn-line btn-sm" href="https://github.com/PedroPEPEUHenrique" target="_blank" rel="noopener">
         <i data-lucide="github"></i>GitHub
       </a>
-      <a class="btn btn-primary btn-sm" href="#contato">Vamos conversar</a>
+      <a class="btn btn-solid btn-sm" href="#contato">Vamos conversar</a>
     </div>
 
     <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span>
     </button>
   </div>
-  <div class="scroll-progress" id="progress"></div>
+
+  <!-- fora do .nav-inner: centralizado na barra inteira, sem herdar
+       a largura de uma coluna do grid -->
+  <nav class="nav-links" id="navLinks">
+    <a href="#processo">Processo</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#stack">Stack</a>
+    <a href="#sobre">Sobre</a>
+  </nav>
 </header>
 
 <main id="topo">
@@ -59,448 +52,442 @@
 <!-- ============================================================
      1 · HERO
      ============================================================ -->
-<section class="hero band-deep">
-  <div class="hero-glow" aria-hidden="true"></div>
+<section class="hero">
   <div class="wrap hero-grid">
 
     <div class="hero-copy">
-      <span class="chip chip-live" data-reveal>
-        <span class="dot"></span>Disponível para novos projetos
+      <span class="status" data-x="1" style="--d:0ms">
+        <span class="status-dot"></span>Disponível para novos projetos
       </span>
 
-      <h1 class="hero-title" data-reveal>
-        Front-end, back-end
-        <span class="line-accent">e deploy.</span>
+      <h1 class="hero-title">
+        <span class="ln" data-x="1" style="--d:60ms">Frontend,</span>
+        <span class="ln" data-x="1" style="--d:130ms">backend</span>
+        <span class="ln accent" data-x="1" style="--d:200ms">e deploy.</span>
       </h1>
 
-      <p class="hero-sub" data-reveal>
+      <p class="hero-sub" data-x="1" style="--d:280ms">
         Sou Pedro Henrique. Construo aplicações web e mobile de ponta a ponta:
         da interface à API, do banco de dados ao pipeline que sobe para produção.
         Júnior no tempo de estrada, completo no escopo que entrego.
       </p>
 
-      <div class="hero-tabs" data-reveal>
-        <span class="tag tag-a"><i data-lucide="layout-dashboard"></i>Interface</span>
-        <span class="tag tag-b"><i data-lucide="server"></i>API &amp; dados</span>
+      <div class="hero-actions" data-x="1" style="--d:340ms">
+        <a href="#projetos" class="btn btn-solid">Ver projetos <i data-lucide="arrow-right"></i></a>
+        <a href="#contato" class="btn btn-line">Falar comigo</a>
       </div>
 
-      <div class="hero-actions" data-reveal>
-        <a href="#projetos" class="btn btn-primary">
-          Ver projetos <i data-lucide="arrow-right"></i>
-        </a>
-        <a href="#contato" class="btn btn-ghost">Falar comigo</a>
-      </div>
-
-      <div class="hero-stats" data-reveal>
-        <div class="stat"><strong data-count="13" data-suffix="+">0</strong><span>repositórios públicos</span></div>
-        <div class="stat"><strong data-count="4" data-suffix="">0</strong><span>projetos full stack</span></div>
-        <div class="stat"><strong data-count="2" data-suffix="">0</strong><span>formações em andamento</span></div>
-      </div>
+      <dl class="stats" data-x="1" style="--d:400ms">
+        <div class="stat"><dt data-count="13" data-suffix="+">0</dt><dd>repositórios públicos</dd></div>
+        <div class="stat"><dt data-count="4" data-suffix="">0</dt><dd>projetos full stack</dd></div>
+        <div class="stat"><dt data-count="2" data-suffix="">0</dt><dd>formações em andamento</dd></div>
+      </dl>
     </div>
 
-    <!-- emblema principal: mesma linguagem visual dos projetos -->
-    <div class="hero-visual" data-reveal>
-      <div class="emblem emblem-xl" data-emblem="0" data-tilt>
-        <svg viewBox="0 0 240 240" class="em-svg" aria-hidden="true">
-          <circle class="em-ring em-ring-1" cx="120" cy="120" r="112" />
-          <circle class="em-ring em-ring-2" cx="120" cy="120" r="94" />
-          <g class="em-core">
-            <path class="em-shield" d="M120 48 L184 83 V145 L120 192 L56 145 V83 Z" />
-            <path class="em-visor" d="M71 117 H169 L150 147 H90 Z" />
-            <path class="em-slash" d="M56 160 L184 97" />
-          </g>
-          <g class="em-ticks">
-            <path d="M120 8 v14" /><path d="M232 120 h-14" />
-            <path d="M120 232 v-14" /><path d="M8 120 h14" />
-          </g>
-        </svg>
-        <span class="em-badge">PEU</span>
+    <div class="hero-visual" data-x="-1" style="--d:200ms">
+      <div class="panel">
+        <div class="panel-bar">
+          <span class="panel-dots"><i></i><i></i><i></i></span>
+          <span class="panel-url"><i data-lucide="lock"></i>app.local/pedidos</span>
+        </div>
+        <div class="mock">
+          <div class="mock-nav">
+            <span class="sk sk-logo"></span><span class="sk sk-nav"></span>
+            <span class="sk sk-nav"></span><span class="sk sk-btn"></span>
+          </div>
+          <div class="mock-head"><span class="sk sk-title"></span><span class="sk sk-search"></span></div>
+          <ul class="mock-rows">
+            <li><span class="sk sk-av"></span><span class="sk sk-line"></span><span class="pill">pago</span></li>
+            <li><span class="sk sk-av"></span><span class="sk sk-line short"></span><span class="pill">pago</span></li>
+            <li><span class="sk sk-av"></span><span class="sk sk-line"></span><span class="pill wait">na fila</span></li>
+            <li><span class="sk sk-av"></span><span class="sk sk-line short"></span><span class="pill wait">na fila</span></li>
+          </ul>
+        </div>
       </div>
-
-      <div class="float-chip fc-1"><i data-lucide="check"></i>build passing</div>
-      <div class="float-chip fc-2"><i data-lucide="activity"></i>200 OK · 38ms</div>
+      <span class="flag flag-top"><i data-lucide="check"></i>build passing</span>
+      <span class="flag flag-bottom"><i data-lucide="activity"></i>200 OK · 38ms</span>
     </div>
 
   </div>
 </section>
 
 <!-- ============================================================
-     2 · FILA DE CÍRCULOS — as frentes que eu cubro
+     2 · FAIXA CORRIDA
      ============================================================ -->
-<section id="frentes" class="disciplines">
-  <div class="wrap">
-    <ul class="disc-row">
-      <li class="disc" data-reveal><span class="disc-ring"><i data-lucide="monitor"></i></span><b>Interface</b></li>
-      <li class="disc" data-reveal><span class="disc-ring"><i data-lucide="smartphone"></i></span><b>Mobile</b></li>
-      <li class="disc" data-reveal><span class="disc-ring"><i data-lucide="share-2"></i></span><b>API REST</b></li>
-      <li class="disc" data-reveal><span class="disc-ring"><i data-lucide="database"></i></span><b>Banco</b></li>
-      <li class="disc" data-reveal><span class="disc-ring"><i data-lucide="container"></i></span><b>Docker</b></li>
-      <li class="disc" data-reveal><span class="disc-ring"><i data-lucide="git-branch"></i></span><b>CI/CD</b></li>
+<section class="marquee" aria-label="Frentes que eu cubro">
+  <div class="marquee-track" id="marquee">
+    <ul class="marquee-set">
+      <li><i data-lucide="monitor"></i>Interface</li>
+      <li><i data-lucide="smartphone"></i>Mobile</li>
+      <li><i data-lucide="share-2"></i>API REST</li>
+      <li><i data-lucide="database"></i>Banco de dados</li>
+      <li><i data-lucide="container"></i>Docker</li>
+      <li><i data-lucide="git-branch"></i>CI/CD</li>
+      <li><i data-lucide="shield-check"></i>Autenticação</li>
+      <li><i data-lucide="gauge"></i>Performance</li>
     </ul>
   </div>
 </section>
 
 <!-- ============================================================
-     3 · BLOCO 1 — visual à esquerda, texto à direita
+     3 · OS DOIS LADOS (troca lateral)
      ============================================================ -->
-<section id="frontend" class="feature">
-  <div class="wrap feature-grid">
-    <div class="feature-visual" data-reveal>
-      <div class="panel panel-browser">
-        <div class="panel-bar">
-          <span class="dots"><i></i><i></i><i></i></span>
-          <span class="panel-url"><i data-lucide="lock"></i>app.local/pedidos</span>
-        </div>
-        <div class="ui-mock">
-          <div class="ui-nav"><span class="sk sk-logo"></span><span class="sk sk-nav"></span><span class="sk sk-nav"></span><span class="sk sk-btn"></span></div>
-          <div class="ui-head"><span class="sk sk-t1"></span><span class="sk sk-search"></span></div>
-          <ul class="ui-rows">
-            <li><span class="sk sk-av"></span><span class="sk sk-line"></span><span class="ui-status">pago</span></li>
-            <li><span class="sk sk-av"></span><span class="sk sk-line is-short"></span><span class="ui-status">pago</span></li>
-            <li><span class="sk sk-av"></span><span class="sk sk-line"></span><span class="ui-status is-wait">na fila</span></li>
-            <li><span class="sk sk-av"></span><span class="sk sk-line is-short"></span><span class="ui-status is-wait">na fila</span></li>
-          </ul>
-          <div class="ui-scan" aria-hidden="true"></div>
-        </div>
-      </div>
-      <span class="float-chip fc-3"><i data-lucide="layers"></i>4 pedidos</span>
-    </div>
-
-    <div class="feature-copy" data-reveal>
-      <span class="eyebrow"><i class="eyebrow-bar is-a"></i>Front-end</span>
-      <h2 class="section-title">O que o usuário toca</h2>
-      <p class="lead">
-        Componentes reutilizáveis, layout responsivo de verdade e atenção no detalhe:
-        estado de carregamento, mensagem de erro, feedback de ação. Web com React e
-        Next.js, mobile com React Native e Expo, na mesma base de código.
-      </p>
-      <ul class="checks">
-        <li><i data-lucide="chevron-right"></i>Landing pages e páginas de venda que convertem</li>
-        <li><i data-lucide="chevron-right"></i>Painéis, dashboards e sistemas internos</li>
-        <li><i data-lucide="chevron-right"></i>Apps mobile Android e iOS com Expo</li>
-        <li><i data-lucide="chevron-right"></i>Consumo de API, autenticação e estados de carregamento</li>
-      </ul>
-      <div class="chips">
-        <span class="chip"><i class="devicon-html5-plain colored"></i>HTML5</span>
-        <span class="chip"><i class="devicon-css3-plain colored"></i>CSS3</span>
-        <span class="chip"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
-        <span class="chip"><i class="devicon-typescript-plain colored"></i>TypeScript</span>
-        <span class="chip"><i class="devicon-react-original colored"></i>React</span>
-        <span class="chip"><i class="devicon-nextjs-plain colored"></i>Next.js</span>
-        <span class="chip"><i class="devicon-tailwindcss-original colored"></i>Tailwind</span>
-      </div>
-      <a href="#projetos" class="btn btn-ghost">Ver projetos de front-end <i data-lucide="arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     4 · TRILHO — o caminho que liga os dois lados
-     ============================================================ -->
-<section class="pathway">
+<section id="lados" class="sides">
   <div class="wrap">
-    <ol class="path" data-reveal>
-      <li class="path-node is-a"><i>front</i><b>Tela de pedidos</b></li>
-      <li class="path-node"><i>request</i><b>GET /api/pedidos</b></li>
-      <li class="path-node is-b"><i>back</i><b>Controller · Service · Repository</b></li>
-      <li class="path-node is-b"><i>dados</i><b>PostgreSQL</b></li>
-      <li class="path-node"><i>resposta</i><b>200 OK · 38ms</b></li>
-    </ol>
-    <p class="path-caption" data-reveal>Um clique na tela atravessa esse caminho inteiro. Eu escrevo todas as paradas.</p>
-  </div>
-</section>
-
-<!-- ============================================================
-     5 · BLOCO 2 — texto à esquerda, visual à direita
-     ============================================================ -->
-<section id="backend" class="feature">
-  <div class="wrap feature-grid feature-flip">
-    <div class="feature-copy" data-reveal>
-      <span class="eyebrow"><i class="eyebrow-bar is-b"></i>Back-end</span>
-      <h2 class="section-title">O que responde por trás</h2>
-      <p class="lead">
-        A camada que ninguém vê, mas todo mundo sente: rotas REST previsíveis,
-        separação em Controller / Service / Repository, banco pensado antes de codar
-        e pipeline que sobe a aplicação sem drama.
-      </p>
-      <ul class="checks">
-        <li><i data-lucide="chevron-right"></i>APIs REST com Node.js, Express e Python/Django</li>
-        <li><i data-lucide="chevron-right"></i>Modelagem em PostgreSQL, MySQL, MongoDB e Supabase</li>
-        <li><i data-lucide="chevron-right"></i>Autenticação, validação e tratamento de erros</li>
-        <li><i data-lucide="chevron-right"></i>Docker, Jenkins e GitHub Actions para CI/CD</li>
-      </ul>
-      <div class="chips">
-        <span class="chip"><i class="devicon-nodejs-plain colored"></i>Node.js</span>
-        <span class="chip"><i class="devicon-express-original colored"></i>Express</span>
-        <span class="chip"><i class="devicon-python-plain colored"></i>Python</span>
-        <span class="chip"><i class="devicon-django-plain colored"></i>Django</span>
-        <span class="chip"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
-        <span class="chip"><i class="devicon-docker-plain colored"></i>Docker</span>
-        <span class="chip"><i class="devicon-jenkins-plain colored"></i>Jenkins</span>
-      </div>
-      <a href="#projetos" class="btn btn-ghost">Ver a arquitetura dos projetos <i data-lucide="arrow-right"></i></a>
+    <div class="head" data-reveal>
+      <span class="eyebrow"><i class="num">01</i>Os dois lados</span>
+      <h2 class="title">Eu cubro a ponta inteira</h2>
+      <p class="lead">Escolha um lado. O conteúdo desliza para o lado escolhido.</p>
     </div>
 
-    <div class="feature-visual" data-reveal>
-      <div class="panel panel-term">
-        <div class="panel-bar">
-          <span class="dots"><i></i><i></i><i></i></span>
-          <span class="panel-url"><i data-lucide="terminal"></i>bash · api</span>
-        </div>
-        <pre class="code"><code><span class="c-dim">$</span> docker compose up -d
+    <div class="switch" role="tablist" aria-label="Frontend ou backend">
+      <span class="switch-thumb" aria-hidden="true"></span>
+      <button class="switch-btn is-on" role="tab" aria-selected="true" aria-controls="sideFront" id="tabFront">Frontend</button>
+      <button class="switch-btn" role="tab" aria-selected="false" aria-controls="sideBack" id="tabBack">Backend</button>
+    </div>
+
+    <div class="slider" id="sideSlider">
+      <div class="slider-track" id="sideTrack">
+
+        <article class="side" id="sideFront" role="tabpanel" aria-labelledby="tabFront">
+          <div class="side-grid">
+            <div class="side-copy">
+              <h3 class="side-title">O que o usuário toca</h3>
+              <p class="lead">
+                Componentes reutilizáveis, layout responsivo de verdade e atenção no detalhe:
+                estado de carregamento, mensagem de erro, feedback de ação. Web com React e
+                Next.js, mobile com React Native e Expo, na mesma base de código.
+              </p>
+              <ul class="checks">
+                <li>Landing pages e páginas de venda que convertem</li>
+                <li>Painéis, dashboards e sistemas internos</li>
+                <li>Apps mobile Android e iOS com Expo</li>
+                <li>Consumo de API, autenticação e estados de carregamento</li>
+              </ul>
+              <div class="chips">
+                <span class="chip"><i class="devicon-html5-plain colored"></i>HTML5</span>
+                <span class="chip"><i class="devicon-css3-plain colored"></i>CSS3</span>
+                <span class="chip"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+                <span class="chip"><i class="devicon-typescript-plain colored"></i>TypeScript</span>
+                <span class="chip"><i class="devicon-react-original colored"></i>React</span>
+                <span class="chip"><i class="devicon-nextjs-plain colored"></i>Next.js</span>
+                <span class="chip"><i class="devicon-tailwindcss-original colored"></i>Tailwind</span>
+              </div>
+            </div>
+            <div class="side-visual">
+              <div class="panel panel-flat">
+                <div class="panel-bar">
+                  <span class="panel-dots"><i></i><i></i><i></i></span>
+                  <span class="panel-url"><i data-lucide="layout-dashboard"></i>painel</span>
+                </div>
+                <div class="mock">
+                  <div class="mock-head"><span class="sk sk-title"></span><span class="sk sk-search"></span></div>
+                  <ul class="mock-rows">
+                    <li><span class="sk sk-av"></span><span class="sk sk-line"></span><span class="pill">ok</span></li>
+                    <li><span class="sk sk-av"></span><span class="sk sk-line short"></span><span class="pill">ok</span></li>
+                    <li><span class="sk sk-av"></span><span class="sk sk-line"></span><span class="pill wait">rascunho</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="side" id="sideBack" role="tabpanel" aria-labelledby="tabBack">
+          <div class="side-grid">
+            <div class="side-copy">
+              <h3 class="side-title">O que responde por trás</h3>
+              <p class="lead">
+                A camada que ninguém vê, mas todo mundo sente: rotas REST previsíveis,
+                separação em Controller, Service e Repository, banco pensado antes de
+                codar e pipeline que sobe a aplicação sem drama.
+              </p>
+              <ul class="checks">
+                <li>APIs REST com Node.js, Express e Python com Django</li>
+                <li>Modelagem em PostgreSQL, MySQL, MongoDB e Supabase</li>
+                <li>Autenticação, validação e tratamento de erros</li>
+                <li>Docker, Jenkins e GitHub Actions para CI/CD</li>
+              </ul>
+              <div class="chips">
+                <span class="chip"><i class="devicon-nodejs-plain colored"></i>Node.js</span>
+                <span class="chip"><i class="devicon-express-original colored"></i>Express</span>
+                <span class="chip"><i class="devicon-python-plain colored"></i>Python</span>
+                <span class="chip"><i class="devicon-django-plain colored"></i>Django</span>
+                <span class="chip"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+                <span class="chip"><i class="devicon-docker-plain colored"></i>Docker</span>
+                <span class="chip"><i class="devicon-jenkins-plain colored"></i>Jenkins</span>
+              </div>
+            </div>
+            <div class="side-visual">
+              <div class="panel panel-flat panel-dark">
+                <div class="panel-bar">
+                  <span class="panel-dots"><i></i><i></i><i></i></span>
+                  <span class="panel-url"><i data-lucide="terminal"></i>bash · api</span>
+                </div>
+<pre class="code"><code><span class="c-dim">$</span> docker compose up
 <span class="c-ok">ok</span> api        <span class="c-dim">running on :3333</span>
 <span class="c-ok">ok</span> postgres   <span class="c-dim">healthy</span>
 
-<span class="c-dim">$</span> curl -s /api/pedidos -H <span class="c-str">"auth: ..."</span>
+<span class="c-dim">$</span> curl /api/pedidos
 {
-  <span class="c-attr">"status"</span>: <span class="c-ok">200</span>,
-  <span class="c-attr">"tempo"</span>: <span class="c-str">"38ms"</span>,
-  <span class="c-attr">"itens"</span>: <span class="c-ok">4</span>,
-  <span class="c-attr">"camadas"</span>: [<span class="c-str">"controller"</span>, <span class="c-str">"service"</span>, <span class="c-str">"repository"</span>]
+  <span class="c-key">"status"</span>: <span class="c-ok">200</span>,
+  <span class="c-key">"tempo"</span>: <span class="c-str">"38ms"</span>,
+  <span class="c-key">"itens"</span>: <span class="c-ok">4</span>,
+  <span class="c-key">"camadas"</span>: [<span class="c-str">"controller"</span>, <span class="c-str">"service"</span>, <span class="c-str">"repository"</span>]
 }
 
-<span class="c-dim">$</span> jenkins deploy --branch main
+<span class="c-dim">$</span> jenkins deploy main
 <span class="c-ok">ok</span> testes  <span class="c-ok">ok</span> build  <span class="c-ok">ok</span> deploy
 <span class="c-dim">$</span> <span class="caret"></span></code></pre>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
-      <span class="float-chip fc-4"><i data-lucide="zap"></i>38ms</span>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     6 · PROCESSO — banda clara, 5 círculos numerados (Figma)
+     4 · TRILHO DA REQUISIÇÃO
      ============================================================ -->
-<section id="processo" class="band-light">
+<section class="pathway">
   <div class="wrap">
-    <div class="head center" data-reveal>
-      <span class="eyebrow"><i class="eyebrow-num">01</i>Processo</span>
-      <h2 class="section-title">Como um projeto anda comigo</h2>
-      <p class="lead">Cinco passos simples, do primeiro contato ao link no ar.</p>
-    </div>
-
-    <ol class="steps">
-      <li class="step" data-reveal>
-        <span class="step-ring"><b>1</b></span>
-        <h3>Conversa</h3>
-        <p>Entendo o problema, o público e o prazo antes de falar de tecnologia.</p>
-      </li>
-      <li class="step" data-reveal>
-        <span class="step-ring"><b>2</b></span>
-        <h3>Escopo</h3>
-        <p>Defino telas, rotas e prioridades. Você aprova o que vai ser feito.</p>
-      </li>
-      <li class="step" data-reveal>
-        <span class="step-ring"><b>3</b></span>
-        <h3>Build</h3>
-        <p>Front e back em paralelo, com commits pequenos e entregas visíveis.</p>
-      </li>
-      <li class="step" data-reveal>
-        <span class="step-ring"><b>4</b></span>
-        <h3>Revisão</h3>
-        <p>Testes manuais, ajustes de responsividade e correção de pontas soltas.</p>
-      </li>
-      <li class="step" data-reveal>
-        <span class="step-ring"><b>5</b></span>
-        <h3>Deploy</h3>
-        <p>Docker, pipeline de CI/CD e a aplicação no ar, com suporte pós-entrega.</p>
-      </li>
+    <ol class="path" id="path">
+      <li class="path-node"><i>front</i><b>Tela de pedidos</b></li>
+      <li class="path-node"><i>request</i><b>GET /api/pedidos</b></li>
+      <li class="path-node"><i>back</i><b>Controller · Service · Repository</b></li>
+      <li class="path-node"><i>dados</i><b>PostgreSQL</b></li>
+      <li class="path-node"><i>resposta</i><b>200 OK · 38ms</b></li>
     </ol>
-
-    <div class="center-cta" data-reveal>
-      <a href="#contato" class="btn btn-primary btn-lg">Começar um projeto <i data-lucide="arrow-right"></i></a>
-    </div>
+    <p class="path-caption">Um clique na tela atravessa esse caminho inteiro. Eu escrevo todas as paradas.</p>
   </div>
 </section>
 
 <!-- ============================================================
-     7 · GALERIA DE EMBLEMAS — o carrossel no espírito do capacete
+     5 · PROCESSO (stepper lateral)
      ============================================================ -->
-<section id="projetos" class="gallery">
+<section id="processo" class="process">
   <div class="wrap">
     <div class="head" data-reveal>
-      <span class="eyebrow"><i class="eyebrow-num">02</i>Projetos</span>
-      <h2 class="section-title">Galeria de projetos</h2>
-      <p class="lead">
-        Cada emblema abre o detalhe do projeto. Arraste para o lado, passe o mouse
-        para ver o verso, clique para abrir a ficha completa.
-      </p>
+      <span class="eyebrow"><i class="num">02</i>Processo</span>
+      <h2 class="title">Como um projeto anda comigo</h2>
+      <p class="lead">Cinco passos, do primeiro contato ao link no ar. Clique para andar de lado.</p>
     </div>
-  </div>
 
-  <div class="rail-outer">
-    <div class="rail" id="rail">
-      <div class="rail-track" id="railTrack">
+    <div class="stepper" id="stepper" role="tablist" aria-label="Etapas do processo">
+      <button class="step-tab is-on" role="tab" aria-selected="true"><i>01</i><b>Conversa</b></button>
+      <button class="step-tab" role="tab" aria-selected="false"><i>02</i><b>Escopo</b></button>
+      <button class="step-tab" role="tab" aria-selected="false"><i>03</i><b>Build</b></button>
+      <button class="step-tab" role="tab" aria-selected="false"><i>04</i><b>Revisão</b></button>
+      <button class="step-tab" role="tab" aria-selected="false"><i>05</i><b>Deploy</b></button>
+      <span class="step-line" id="stepLine" aria-hidden="true"></span>
+    </div>
 
-        <article class="card" data-project="conecta" data-tilt style="--c1:#e0703c; --c2:#d99a6e;">
-          <div class="card-emblem">
-            <svg viewBox="0 0 240 240" class="em-svg" aria-hidden="true">
-              <circle class="em-ring em-ring-1" cx="120" cy="120" r="110" />
-              <circle class="em-ring em-ring-2" cx="120" cy="120" r="90" />
-              <g class="em-core">
-                <path class="em-shield" d="M120 50 L181 83 V143 L120 190 L59 143 V83 Z" />
-                <path class="em-visor" d="M73 115 H167 L148 144 H92 Z" />
-                <path class="em-slash" d="M59 158 L181 99" />
-              </g>
-            </svg>
-            <span class="card-index">01</span>
-          </div>
-          <div class="card-face card-front">
-            <h3>Portal Conecta Escolar</h3>
-            <span class="card-meta">Monolito full stack · Next.js</span>
-          </div>
-          <div class="card-face card-back">
-            <p>Plataforma educacional com API REST para gestão de atividades escolares e da comunidade.</p>
-            <span class="card-open">Abrir ficha <i data-lucide="arrow-up-right"></i></span>
+    <div class="slider">
+      <div class="slider-track" id="stepTrack">
+        <article class="step-panel" role="tabpanel">
+          <span class="step-big">01</span>
+          <div class="step-text">
+            <h3>Conversa</h3>
+            <p>Entendo o problema, o público e o prazo antes de falar de tecnologia.</p>
           </div>
         </article>
-
-        <article class="card" data-project="lanche" data-tilt style="--c1:#6484d4; --c2:#93a8dd;">
-          <div class="card-emblem">
-            <svg viewBox="0 0 240 240" class="em-svg" aria-hidden="true">
-              <circle class="em-ring em-ring-1" cx="120" cy="120" r="110" />
-              <circle class="em-ring em-ring-2" cx="120" cy="120" r="90" />
-              <g class="em-core">
-                <rect class="em-shield" x="76" y="62" width="88" height="116" rx="14" />
-                <path class="em-visor" d="M77 112 H163 L148 140 H92 Z" />
-                <path class="em-slash" d="M70 159 L170 95" />
-              </g>
-            </svg>
-            <span class="card-index">02</span>
-          </div>
-          <div class="card-face card-front">
-            <h3>Lanche Expresso</h3>
-            <span class="card-meta">React Native · Expo · MySQL</span>
-          </div>
-          <div class="card-face card-back">
-            <p>App de delivery com backend próprio: catálogo, carrinho e fluxo de pedido pensados para o celular.</p>
-            <span class="card-open">Abrir ficha <i data-lucide="arrow-up-right"></i></span>
+        <article class="step-panel" role="tabpanel">
+          <span class="step-big">02</span>
+          <div class="step-text">
+            <h3>Escopo</h3>
+            <p>Defino telas, rotas e prioridades. Você aprova o que vai ser feito.</p>
           </div>
         </article>
-
-        <article class="card" data-project="renderiz" data-tilt style="--c1:#45b394; --c2:#82ccb5;">
-          <div class="card-emblem">
-            <svg viewBox="0 0 240 240" class="em-svg" aria-hidden="true">
-              <circle class="em-ring em-ring-1" cx="120" cy="120" r="110" />
-              <circle class="em-ring em-ring-2" cx="120" cy="120" r="90" />
-              <g class="em-core">
-                <path class="em-shield" d="M120 52 L185 120 L120 188 L55 120 Z" />
-                <circle class="em-visor" cx="120" cy="120" r="28" />
-                <path class="em-slash" d="M55 152 L185 88" />
-              </g>
-            </svg>
-            <span class="card-index">03</span>
-          </div>
-          <div class="card-face card-front">
-            <h3>Renderiz</h3>
-            <span class="card-meta">Framework Python · Virtual DOM</span>
-          </div>
-          <div class="card-face card-back">
-            <p>Framework para interfaces de alta performance, com Virtual DOM e componentes reutilizáveis.</p>
-            <span class="card-open">Abrir ficha <i data-lucide="arrow-up-right"></i></span>
+        <article class="step-panel" role="tabpanel">
+          <span class="step-big">03</span>
+          <div class="step-text">
+            <h3>Build</h3>
+            <p>Front e back em paralelo, com commits pequenos e entregas visíveis.</p>
           </div>
         </article>
-
-        <article class="card" data-project="guide" data-tilt style="--c1:#9d7fc4; --c2:#c0acd9;">
-          <div class="card-emblem">
-            <svg viewBox="0 0 240 240" class="em-svg" aria-hidden="true">
-              <circle class="em-ring em-ring-1" cx="120" cy="120" r="110" />
-              <circle class="em-ring em-ring-2" cx="120" cy="120" r="90" />
-              <g class="em-core">
-                <path class="em-shield" d="M72 67 H168 L149 173 H91 Z" />
-                <path class="em-visor" d="M83 110 H157 L144 139 H96 Z" />
-                <path class="em-slash" d="M62 157 L178 96" />
-              </g>
-            </svg>
-            <span class="card-index">04</span>
-          </div>
-          <div class="card-face card-front">
-            <h3>Back Guide</h3>
-            <span class="card-meta">Landing page · Funil de vendas</span>
-          </div>
-          <div class="card-face card-back">
-            <p>Página de vendas com foco em conversão. Estrutura leve, rápida e direta ao ponto.</p>
-            <span class="card-open">Abrir ficha <i data-lucide="arrow-up-right"></i></span>
+        <article class="step-panel" role="tabpanel">
+          <span class="step-big">04</span>
+          <div class="step-text">
+            <h3>Revisão</h3>
+            <p>Testes manuais, ajustes de responsividade e correção de pontas soltas.</p>
           </div>
         </article>
-
+        <article class="step-panel" role="tabpanel">
+          <span class="step-big">05</span>
+          <div class="step-text">
+            <h3>Deploy</h3>
+            <p>Docker, pipeline de CI/CD e a aplicação no ar, com suporte depois da entrega.</p>
+          </div>
+        </article>
       </div>
     </div>
 
-    <div class="wrap">
-      <div class="rail-ui">
-        <span class="rail-hint"><i data-lucide="move-horizontal"></i>Arraste ou role</span>
-        <span class="rail-bar"><i id="railBar"></i></span>
-        <span class="rail-count"><b id="railNow">01</b> / 04</span>
-      </div>
+    <div class="cta-row">
+      <a href="#contato" class="btn btn-solid btn-lg">Começar um projeto <i data-lucide="arrow-right"></i></a>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     8 · GRID 4×2 — a stack (Figma: 8 quadrados)
+     6 · PROJETOS (trilho lateral)
      ============================================================ -->
-<section id="stack">
+<section id="projetos" class="gallery">
+  <div class="wrap gallery-head">
+    <div class="head" data-reveal>
+      <span class="eyebrow"><i class="num">03</i>Projetos</span>
+      <h2 class="title">Quatro projetos, quatro escopos</h2>
+      <p class="lead">Arraste para o lado ou use as setas. Clique em um projeto para abrir a ficha.</p>
+    </div>
+    <div class="rail-nav">
+      <button class="arrow" id="railPrev" aria-label="Projeto anterior"><i data-lucide="arrow-left"></i></button>
+      <button class="arrow" id="railNext" aria-label="Próximo projeto"><i data-lucide="arrow-right"></i></button>
+    </div>
+  </div>
+
+  <div class="rail" id="rail">
+    <div class="rail-track">
+
+      <article class="card" data-project="conecta" tabindex="0" role="button">
+        <span class="card-num">01</span>
+        <div class="card-mark">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <rect class="mk-frame" x="34" y="34" width="132" height="132" />
+            <path class="mk-line" d="M34 100 H166" />
+            <path class="mk-line" d="M100 34 V166" />
+            <rect class="mk-fill" x="66" y="66" width="68" height="68" />
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Portal Conecta Escolar</h3>
+          <p class="card-meta">Monolito full stack · Next.js</p>
+          <span class="card-open">Abrir ficha <i data-lucide="arrow-right"></i></span>
+        </div>
+      </article>
+
+      <article class="card" data-project="lanche" tabindex="0" role="button">
+        <span class="card-num">02</span>
+        <div class="card-mark">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <rect class="mk-frame" x="62" y="26" width="76" height="148" />
+            <path class="mk-line" d="M62 62 H138" />
+            <path class="mk-line" d="M62 138 H138" />
+            <rect class="mk-fill" x="84" y="84" width="32" height="32" />
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Lanche Expresso</h3>
+          <p class="card-meta">React Native · Expo · MySQL</p>
+          <span class="card-open">Abrir ficha <i data-lucide="arrow-right"></i></span>
+        </div>
+      </article>
+
+      <article class="card" data-project="renderiz" tabindex="0" role="button">
+        <span class="card-num">03</span>
+        <div class="card-mark">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <rect class="mk-frame" x="42" y="42" width="116" height="116" transform="rotate(45 100 100)" />
+            <path class="mk-line" d="M18 100 H182" />
+            <rect class="mk-fill" x="82" y="82" width="36" height="36" />
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Renderiz</h3>
+          <p class="card-meta">Framework Python · Virtual DOM</p>
+          <span class="card-open">Abrir ficha <i data-lucide="arrow-right"></i></span>
+        </div>
+      </article>
+
+      <article class="card" data-project="guide" tabindex="0" role="button">
+        <span class="card-num">04</span>
+        <div class="card-mark">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <rect class="mk-frame" x="40" y="40" width="120" height="120" />
+            <path class="mk-line" d="M40 76 H160" />
+            <rect class="mk-fill" x="40" y="112" width="120" height="48" />
+          </svg>
+        </div>
+        <div class="card-body">
+          <h3>Back Guide</h3>
+          <p class="card-meta">Landing page · Funil de vendas</p>
+          <span class="card-open">Abrir ficha <i data-lucide="arrow-right"></i></span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
   <div class="wrap">
-    <div class="head center" data-reveal>
-      <span class="eyebrow"><i class="eyebrow-num">03</i>Stack</span>
-      <h2 class="section-title">O que eu uso dos dois lados</h2>
+    <div class="rail-bar"><i id="railBar"></i></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     7 · STACK
+     ============================================================ -->
+<section id="stack" class="stack">
+  <div class="wrap">
+    <div class="head" data-reveal>
+      <span class="eyebrow"><i class="num">04</i>Stack</span>
+      <h2 class="title">O que eu uso dos dois lados</h2>
       <p class="lead">Oito frentes que sustentam um projeto inteiro: quatro no front, quatro no back.</p>
     </div>
 
     <div class="tiles">
-      <article class="tile" data-reveal>
-        <span class="tile-tag tag-a">Front</span>
+      <article class="tile">
+        <span class="tile-tag">Front</span>
         <div class="tile-logos"><i class="devicon-html5-plain colored"></i><i class="devicon-css3-plain colored"></i><i class="devicon-javascript-plain colored"></i></div>
         <h3>Base da web</h3>
-        <p>HTML5, CSS3 e JavaScript moderno, com semântica, flex/grid e responsividade.</p>
+        <p>HTML5, CSS3 e JavaScript moderno, com semântica, flex, grid e responsividade.</p>
       </article>
-      <article class="tile" data-reveal>
-        <span class="tile-tag tag-a">Front</span>
+      <article class="tile">
+        <span class="tile-tag">Front</span>
         <div class="tile-logos"><i class="devicon-typescript-plain colored"></i></div>
         <h3>TypeScript</h3>
         <p>Tipagem para pegar erro em tempo de escrita, não em produção.</p>
       </article>
-      <article class="tile" data-reveal>
-        <span class="tile-tag tag-a">Front</span>
+      <article class="tile">
+        <span class="tile-tag">Front</span>
         <div class="tile-logos"><i class="devicon-react-original colored"></i><i class="devicon-nextjs-plain colored"></i></div>
-        <h3>React &amp; Next.js</h3>
+        <h3>React e Next.js</h3>
         <p>SPA e App Router, componentes reutilizáveis e rotas organizadas.</p>
       </article>
-      <article class="tile" data-reveal>
-        <span class="tile-tag tag-a">Front</span>
+      <article class="tile">
+        <span class="tile-tag">Front</span>
         <div class="tile-logos"><i class="devicon-react-original colored"></i><i class="devicon-android-plain colored"></i><i class="devicon-apple-original colored"></i></div>
         <h3>Mobile</h3>
         <p>React Native, Expo e NativeWind. Um código, Android e iOS.</p>
       </article>
-      <article class="tile" data-reveal>
-        <span class="tile-tag tag-b">Back</span>
+      <article class="tile">
+        <span class="tile-tag is-back">Back</span>
         <div class="tile-logos"><i class="devicon-nodejs-plain colored"></i><i class="devicon-express-original colored"></i></div>
-        <h3>Node.js &amp; Express</h3>
+        <h3>Node.js e Express</h3>
         <p>APIs REST em camadas, middlewares, validação e autenticação.</p>
       </article>
-      <article class="tile" data-reveal>
-        <span class="tile-tag tag-b">Back</span>
+      <article class="tile">
+        <span class="tile-tag is-back">Back</span>
         <div class="tile-logos"><i class="devicon-python-plain colored"></i><i class="devicon-django-plain colored"></i></div>
-        <h3>Python &amp; Django</h3>
-        <p>Back-end robusto, ORM, admin e scripts de automação.</p>
+        <h3>Python e Django</h3>
+        <p>Backend robusto, ORM, admin e scripts de automação.</p>
       </article>
-      <article class="tile" data-reveal>
-        <span class="tile-tag tag-b">Back</span>
+      <article class="tile">
+        <span class="tile-tag is-back">Back</span>
         <div class="tile-logos"><i class="devicon-postgresql-plain colored"></i><i class="devicon-mysql-original colored"></i><i class="devicon-mongodb-plain colored"></i></div>
         <h3>Bancos de dados</h3>
         <p>PostgreSQL, MySQL, SQL Server, MongoDB e Supabase, modelados antes de codar.</p>
       </article>
-      <article class="tile" data-reveal>
-        <span class="tile-tag tag-b">Back</span>
+      <article class="tile">
+        <span class="tile-tag is-back">Back</span>
         <div class="tile-logos"><i class="devicon-docker-plain colored"></i><i class="devicon-jenkins-plain colored"></i><i class="devicon-githubactions-plain colored"></i></div>
-        <h3>DevOps &amp; CI/CD</h3>
+        <h3>DevOps e CI/CD</h3>
         <p>Docker, Jenkins, GitHub Actions, automações com n8n e DevSecOps.</p>
       </article>
     </div>
 
-    <div class="center-cta" data-reveal>
-      <a href="https://github.com/PedroPEPEUHenrique" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+    <div class="cta-row">
+      <a href="https://github.com/PedroPEPEUHenrique" target="_blank" rel="noopener" class="btn btn-line btn-lg">
         Ver todos os repositórios <i data-lucide="arrow-up-right"></i>
       </a>
     </div>
@@ -508,36 +495,15 @@
 </section>
 
 <!-- ============================================================
-     9 · BLOCO 3 — sobre
+     8 · SOBRE
      ============================================================ -->
-<section id="sobre" class="feature">
-  <div class="wrap feature-grid">
-    <div class="feature-visual" data-reveal>
-      <div class="profile">
-        <div class="profile-top">
-          <span class="avatar">PH</span>
-          <div>
-            <strong>Pedro Henrique</strong>
-            <span>Desenvolvedor Full Stack Júnior</span>
-          </div>
-        </div>
-        <ul class="profile-list">
-          <li><i data-lucide="graduation-cap"></i>Graduando em Análise e Desenvolvimento de Sistemas</li>
-          <li><i data-lucide="award"></i>Técnico em Desenvolvimento Web &amp; Mobile</li>
-          <li><i data-lucide="map-pin"></i>Goiânia, GO — disponível para remoto</li>
-          <li><i data-lucide="search"></i>Base em suporte técnico: diagnóstico e causa raiz</li>
-        </ul>
-        <div class="bars">
-          <div class="bar-row"><span>Front-end</span><span class="bar"><i style="--w:82%"></i></span></div>
-          <div class="bar-row"><span>Back-end</span><span class="bar"><i style="--w:78%"></i></span></div>
-          <div class="bar-row"><span>DevOps &amp; CI/CD</span><span class="bar"><i style="--w:70%"></i></span></div>
-        </div>
+<section id="sobre" class="about">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <div class="head" data-reveal>
+        <span class="eyebrow"><i class="num">05</i>Sobre</span>
+        <h2 class="title">Júnior no tempo, completo no escopo</h2>
       </div>
-    </div>
-
-    <div class="feature-copy" data-reveal>
-      <span class="eyebrow"><i class="eyebrow-num">04</i>Sobre</span>
-      <h2 class="section-title">Júnior no tempo, completo no escopo</h2>
       <p class="lead">
         Sou júnior e não escondo isso. O que eu entrego é um júnior que cobre o ciclo
         inteiro: monta a interface, escreve a API, modela o banco, conteineriza e coloca
@@ -549,85 +515,98 @@
         antes de escrever a primeira linha, e deixar o código legível para quem vem depois.
       </p>
       <div class="chips">
-        <span class="chip">Clean Code</span><span class="chip">Git &amp; GitHub</span>
+        <span class="chip">Clean Code</span><span class="chip">Git e GitHub</span>
         <span class="chip">Arquitetura em camadas</span><span class="chip">DevSecOps</span>
         <span class="chip">n8n</span><span class="chip">Figma</span><span class="chip">Vercel</span>
       </div>
-      <a href="#contato" class="btn btn-primary">Vamos conversar <i data-lucide="arrow-right"></i></a>
+      <a href="#contato" class="btn btn-solid">Vamos conversar <i data-lucide="arrow-right"></i></a>
     </div>
+
+    <aside class="profile">
+      <div class="profile-top">
+        <span class="profile-mark">PH</span>
+        <div>
+          <strong>Pedro Henrique</strong>
+          <span>Desenvolvedor Full Stack Júnior</span>
+        </div>
+      </div>
+      <ul class="profile-list">
+        <li><i data-lucide="graduation-cap"></i>Graduando em Análise e Desenvolvimento de Sistemas</li>
+        <li><i data-lucide="award"></i>Técnico em Desenvolvimento Web e Mobile</li>
+        <li><i data-lucide="map-pin"></i>Goiânia, GO. Disponível para remoto</li>
+        <li><i data-lucide="search"></i>Base em suporte técnico: diagnóstico e causa raiz</li>
+      </ul>
+      <div class="bars" id="bars">
+        <div class="bar-row"><span>Frontend</span><b>82%</b><span class="bar"><i style="--w:82%"></i></span></div>
+        <div class="bar-row"><span>Backend</span><b>78%</b><span class="bar"><i style="--w:78%"></i></span></div>
+        <div class="bar-row"><span>DevOps e CI/CD</span><b>70%</b><span class="bar"><i style="--w:70%"></i></span></div>
+      </div>
+    </aside>
   </div>
 </section>
 
 <!-- ============================================================
-     10 · CONTATO
+     9 · CONTATO
      ============================================================ -->
-<section id="contato" class="band-deep contact-band">
-  <div class="hero-glow glow-b" aria-hidden="true"></div>
+<section id="contato" class="contact">
   <div class="wrap">
-    <div class="head center" data-reveal>
-      <span class="eyebrow"><i class="eyebrow-num">05</i>Contato</span>
-      <h2 class="section-title big">Tem um projeto?<br><span class="line-accent">Bora colocar no ar.</span></h2>
-      <p class="lead">Me conta a ideia por e-mail ou LinkedIn. Respondo o mais rápido possível.</p>
+    <div class="head" data-reveal>
+      <span class="eyebrow"><i class="num">06</i>Contato</span>
+      <h2 class="title big">Tem um projeto?<br>Bora colocar no ar.</h2>
+      <p class="lead">Me conta a ideia por email ou LinkedIn. Respondo o mais rápido possível.</p>
     </div>
 
-    <div class="center-cta" data-reveal>
-      <a href="mailto:flashpedro123@gmail.com" class="btn btn-primary btn-lg">
-        <i data-lucide="mail"></i>flashpedro123@gmail.com
-      </a>
-    </div>
+    <a class="mail" href="mailto:flashpedro123@gmail.com">
+      <i data-lucide="mail"></i><span>flashpedro123@gmail.com</span>
+      <i data-lucide="arrow-right" class="mail-go"></i>
+    </a>
 
-    <div class="contacts">
-      <a class="contact" href="https://www.linkedin.com/in/pedropepeuhenrique/" target="_blank" rel="noopener" data-reveal>
-        <i data-lucide="linkedin"></i>
-        <div><strong>LinkedIn</strong><span>/in/pedropepeuhenrique</span></div>
-        <i data-lucide="arrow-up-right" class="contact-go"></i>
-      </a>
-      <a class="contact" href="https://github.com/PedroPEPEUHenrique" target="_blank" rel="noopener" data-reveal>
-        <i data-lucide="github"></i>
-        <div><strong>GitHub</strong><span>@PedroPEPEUHenrique</span></div>
-        <i data-lucide="arrow-up-right" class="contact-go"></i>
-      </a>
-      <a class="contact" href="https://www.instagram.com/dev.pepeu/" target="_blank" rel="noopener" data-reveal>
-        <i data-lucide="instagram"></i>
-        <div><strong>Instagram</strong><span>@dev.pepeu</span></div>
-        <i data-lucide="arrow-up-right" class="contact-go"></i>
-      </a>
-    </div>
+    <ul class="links">
+      <li><a href="https://www.linkedin.com/in/pedropepeuhenrique/" target="_blank" rel="noopener">
+        <i data-lucide="linkedin"></i><strong>LinkedIn</strong><span>/in/pedropepeuhenrique</span>
+        <i data-lucide="arrow-up-right" class="go"></i></a></li>
+      <li><a href="https://github.com/PedroPEPEUHenrique" target="_blank" rel="noopener">
+        <i data-lucide="github"></i><strong>GitHub</strong><span>@PedroPEPEUHenrique</span>
+        <i data-lucide="arrow-up-right" class="go"></i></a></li>
+      <li><a href="https://www.instagram.com/dev.pepeu/" target="_blank" rel="noopener">
+        <i data-lucide="instagram"></i><strong>Instagram</strong><span>@dev.pepeu</span>
+        <i data-lucide="arrow-up-right" class="go"></i></a></li>
+    </ul>
   </div>
 </section>
 
 </main>
 
 <!-- ============================================================
-     11 · FOOTER — colunas, divisor, logo e botão (Figma)
+     FOOTER
      ============================================================ -->
 <footer class="footer">
   <div class="wrap">
     <div class="footer-cols">
       <div class="footer-col">
-        <h4>Front-end</h4>
-        <a href="#frontend">React &amp; Next.js</a>
-        <a href="#frontend">React Native</a>
-        <a href="#frontend">TypeScript</a>
+        <h4>Frontend</h4>
+        <a href="#lados">React e Next.js</a>
+        <a href="#lados">React Native</a>
+        <a href="#lados">TypeScript</a>
         <a href="#stack">Tailwind</a>
       </div>
       <div class="footer-col">
-        <h4>Back-end</h4>
-        <a href="#backend">Node.js &amp; Express</a>
-        <a href="#backend">Python &amp; Django</a>
-        <a href="#backend">Bancos de dados</a>
-        <a href="#stack">Docker &amp; CI/CD</a>
+        <h4>Backend</h4>
+        <a href="#lados">Node.js e Express</a>
+        <a href="#lados">Python e Django</a>
+        <a href="#lados">Bancos de dados</a>
+        <a href="#stack">Docker e CI/CD</a>
       </div>
       <div class="footer-col">
         <h4>Navegação</h4>
-        <a href="#frentes">Frentes</a>
         <a href="#processo">Processo</a>
         <a href="#projetos">Projetos</a>
         <a href="#stack">Stack</a>
+        <a href="#sobre">Sobre</a>
       </div>
       <div class="footer-col">
         <h4>Contato</h4>
-        <a href="mailto:flashpedro123@gmail.com">E-mail</a>
+        <a href="mailto:flashpedro123@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/pedropepeuhenrique/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/PedroPEPEUHenrique" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.instagram.com/dev.pepeu/" target="_blank" rel="noopener">Instagram</a>
@@ -640,41 +619,31 @@
     </div>
 
     <div class="footer-bottom">
-      <span class="footer-logo"><b>PH</b></span>
+      <span class="footer-mark">PH</span>
       <span class="footer-copy">© 2026 Pedro Henrique · Desenvolvedor Full Stack Júnior</span>
-      <a href="#topo" class="btn btn-ghost btn-sm">Voltar ao topo <i data-lucide="arrow-up"></i></a>
+      <a href="#topo" class="btn btn-line btn-sm">Voltar ao topo <i data-lucide="arrow-up"></i></a>
     </div>
   </div>
 </footer>
 
 <!-- ============================================================
-     FICHA DO PROJETO — o "detalhe" que abre a partir do emblema
+     FICHA DO PROJETO (gaveta lateral)
      ============================================================ -->
-<div class="sheet" id="sheet" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
-  <div class="sheet-scrim" data-sheet-close></div>
-  <div class="sheet-panel">
-    <button class="sheet-close" data-sheet-close aria-label="Fechar ficha">
-      <i data-lucide="x"></i>
-    </button>
-    <div class="sheet-grid">
-      <div class="sheet-visual"><div class="sheet-emblem" id="sheetEmblem"></div></div>
-      <div class="sheet-copy">
-        <span class="eyebrow" id="sheetKicker"></span>
-        <h3 class="section-title" id="sheetTitle"></h3>
-        <p class="lead" id="sheetText"></p>
-        <ul class="sheet-facts" id="sheetFacts"></ul>
-        <div class="chips" id="sheetChips"></div>
-        <a class="btn btn-primary" id="sheetLink" href="#" target="_blank" rel="noopener">
-          Ver no GitHub <i data-lucide="arrow-up-right"></i>
-        </a>
-      </div>
-    </div>
-  </div>
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-scrim" data-close></div>
+  <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+    <button class="drawer-close" data-close aria-label="Fechar ficha"><i data-lucide="x"></i></button>
+    <span class="drawer-num" id="drawerNum"></span>
+    <h3 class="title" id="drawerTitle"></h3>
+    <p class="lead" id="drawerText"></p>
+    <ul class="facts" id="drawerFacts"></ul>
+    <div class="chips" id="drawerChips"></div>
+    <a class="btn btn-solid" id="drawerLink" href="#" target="_blank" rel="noopener">
+      Ver no GitHub <i data-lucide="arrow-up-right"></i>
+    </a>
+  </aside>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lucide@0.462.0/dist/umd/lucide.min.js"></script>
 <script src="script.js"></script>
 </body>
