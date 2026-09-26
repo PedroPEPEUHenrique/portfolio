@@ -1,0 +1,86 @@
+/* A ordem importa: o Tailwind entra primeiro, depois os estilos
+   da HeroUI, que se apoiam nas camadas dele. */
+@import "tailwindcss";
+@import "@heroui/styles";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Verde como cor primária: é a que a HeroUI usa para derivar
+   botão, chip, aba e medidor. Âmbar e vermelho entram como código
+   de camada, e qualquer bloco pode reescrever --accent para que a
+   biblioteca inteira assuma a cor daquela camada ali dentro. */
+:root {
+  --accent: #1D7448;
+  --radius: 6px;
+}
+
+@theme {
+  --font-sans: 'Archivo', system-ui, -apple-system, sans-serif;
+  --font-display: 'Archivo Black', 'Archivo', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* a página tem um tom de fundo e os blocos flutuam em branco */
+  --color-canvas: #f1f1f3;
+  --color-surface: #ffffff;
+  --color-deep: #16181d;
+
+  --color-ink: #16181d;
+  --color-ink-soft: #52565e;
+  --color-ink-faint: #878b93;
+  --color-rule: #e2e3e7;
+  --color-amber: #F2B632;
+  --color-green: #1D7448;
+  --color-red: #B3261E;
+  --color-accent-ink: #1D7448;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.display { font-family: var(--font-display); font-weight: 400; letter-spacing: -.02em; line-height: 1.06; }
+.mono { font-family: var(--font-mono); }
+
+/* rótulo de seção, em versalete espaçado */
+.tag-line {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: .63rem;
+}
+
+/* ---------------------------------------------------------
+   Movimento lateral, discreto. Só entra depois que a página
+   confirma o JS, para nada sumir se o script falhar.
+   --------------------------------------------------------- */
+/* Regra de ouro: o conteúdo nasce visível. O estado escondido só
+   é armado depois que o JS confirma que sabe revelá-lo, senão uma
+   falha no script apagaria a página inteira. */
+[data-x], [data-reveal] { opacity: 1; }
+
+.armed [data-x] { opacity: 0; transform: translateX(-24px); }
+.armed.ready [data-x] {
+  opacity: 1; transform: none;
+  transition: opacity .6s cubic-bezier(.22,1,.36,1) var(--d, 0ms),
+              transform .7s cubic-bezier(.22,1,.36,1) var(--d, 0ms);
+}
+
+.armed [data-reveal] { opacity: 0; transform: translateY(14px); }
+.armed [data-reveal].in {
+  opacity: 1; transform: none;
+  transition: opacity .5s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .armed [data-x], .armed [data-reveal] { opacity: 1 !important; transform: none !important; }
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+}
