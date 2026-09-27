@@ -5,12 +5,13 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Verde como cor primária: é a que a HeroUI usa para derivar
-   botão, chip, aba e medidor. Âmbar e vermelho entram como código
-   de camada, e qualquer bloco pode reescrever --accent para que a
-   biblioteca inteira assuma a cor daquela camada ali dentro. */
+/* Paleta tirada do short: vermelho, ciano, amarelo e verde sobre
+   base preta. O verde é a primária, pois é a que a HeroUI usa para
+   derivar botão, chip, aba e medidor, e é legível no claro. Os
+   outros três entram como código de camada, e qualquer bloco pode
+   reescrever --accent para a biblioteca assumir a cor dali. */
 :root {
-  --accent: #1D7448;
+  --accent: #167D38;
   --radius: 6px;
 }
 
@@ -20,18 +21,24 @@
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 
   /* a página tem um tom de fundo e os blocos flutuam em branco */
-  --color-canvas: #f1f1f3;
+  /* creme puxado para o amarelo do short, no lugar do cinza frio */
+  --color-canvas: #F8F2E0;
   --color-surface: #ffffff;
-  --color-deep: #16181d;
+  --color-deep: #14161A;
 
-  --color-ink: #16181d;
-  --color-ink-soft: #52565e;
-  --color-ink-faint: #878b93;
-  --color-rule: #e2e3e7;
-  --color-amber: #F2B632;
-  --color-green: #1D7448;
-  --color-red: #B3261E;
-  --color-accent-ink: #1D7448;
+  --color-ink: #14161A;
+  --color-ink-soft: #55514A;
+  --color-ink-faint: #8A857A;
+  --color-rule: #E4DCC6;
+
+  /* Cores cheias do short. Regra: amarelo e ciano só entram como
+     preenchimento. Sobre o creme o amarelo dá 1.5:1 e o ciano 2.6:1,
+     então nenhum dos dois pode virar texto no claro. Vermelho (6.0:1)
+     e verde (4.7:1) passam e podem ser texto. */
+  --color-yellow: #E3C51B;
+  --color-cyan: #1CA5BB;
+  --color-red: #B81414;
+  --color-green: #167D38;
 }
 
 html {

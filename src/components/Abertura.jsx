@@ -11,10 +11,11 @@ export default function Abertura() {
       <div className="grid overflow-hidden rounded-lg border border-rule bg-surface lg:grid-cols-[minmax(0,.9fr)_minmax(0,1.1fr)]">
 
         <div className="relative bg-deep p-8 text-white sm:p-10 lg:p-12" data-x style={{ '--d': '0ms' }}>
-          {/* as três cores assinam o topo do painel */}
-          <span className="absolute inset-x-0 top-0 flex h-[3px]" aria-hidden="true">
-            <i className="flex-1 bg-[var(--color-amber)]" />
+          {/* as quatro cores do short assinam o topo do painel */}
+          <span className="absolute inset-x-0 top-0 flex h-1" aria-hidden="true">
+            <i className="flex-1 bg-[var(--color-yellow)]" />
             <i className="flex-1 bg-[var(--color-green)]" />
+            <i className="flex-1 bg-[var(--color-cyan)]" />
             <i className="flex-1 bg-[var(--color-red)]" />
           </span>
           <div className="flex items-center gap-3.5">
@@ -32,7 +33,7 @@ export default function Abertura() {
           <div className="mt-8 flex flex-wrap items-center gap-3">
             {/* chip próprio: o "soft" da HeroUI some sobre o escuro */}
             <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[.06] px-3 py-1 text-[11.5px] text-white/85">
-              <span className="size-1.5 rounded-full bg-[var(--color-amber)]" />
+              <span className="size-1.5 rounded-full bg-[var(--color-yellow)]" />
               {perfil.status}
             </span>
             <span className="tag-line text-white/40">Goiânia, GO</span>

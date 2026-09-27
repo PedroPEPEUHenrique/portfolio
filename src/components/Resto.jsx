@@ -4,7 +4,10 @@ import { Marca, Bala } from './bits';
 
 /* As três cores se revezam ao longo das etapas, mas só na barra
    do topo: o âmbar tem 1.8:1 sobre branco e reprovaria como texto. */
-const CICLO = ['var(--color-amber)', 'var(--color-green)', 'var(--color-red)'];
+const CICLO = [
+  'var(--color-yellow)', 'var(--color-green)',
+  'var(--color-cyan)', 'var(--color-red)'
+];
 
 /* ---------------------------------------------------------
    02 · Competências

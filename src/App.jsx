@@ -3,6 +3,7 @@ import Abertura from './components/Abertura';
 import Projetos from './components/Projetos';
 import { Competencias, Processo, Sobre, Contato } from './components/Resto';
 import { useReveal } from './components/bits';
+import Mosaico from './components/Mosaico';
 
 export default function App() {
   useReveal();
@@ -16,13 +17,16 @@ export default function App() {
   }, []);
 
   return (
-    <main className="mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
+    <>
+      <Mosaico />
+      <main className="relative z-10 mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
       <Abertura />
       <Projetos />
       <Competencias />
       <Processo />
       <Sobre />
       <Contato />
-    </main>
+      </main>
+    </>
   );
 }

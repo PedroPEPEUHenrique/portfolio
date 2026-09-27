@@ -38,7 +38,7 @@ export const projetos = [
       'execução: continua sendo um único servidor e um único banco.',
     camadas: [
       {
-        cor: 'var(--color-amber)',
+        cor: 'var(--color-yellow)',
         nome: 'Apresentação',
         oque:
           'App Expo, React Native e NativeWind. Rotas por arquivo, estado em stores de auth, ' +
@@ -152,7 +152,7 @@ export const projetos = [
 export const competencias = [
   {
     id: 'interface',
-    cor: 'var(--color-amber)',
+    cor: 'var(--color-yellow)',
     titulo: 'Interface',
     nota: 'Web e mobile na mesma cabeça',
     nivel: 82,
@@ -204,7 +204,7 @@ export const competencias = [
   },
   {
     id: 'infra',
-    cor: 'var(--color-ink)',
+    cor: 'var(--color-cyan)',
     titulo: 'Infra e entrega',
     nota: 'Do meu terminal até o ar',
     nivel: 70,

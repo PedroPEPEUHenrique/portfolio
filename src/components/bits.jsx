@@ -6,7 +6,8 @@ import { useEffect, useRef, useState } from 'react';
 export function Marca({ num, titulo, nota }) {
   return (
     <header className="mb-8 sm:mb-10" data-reveal>
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+      {/* faixa opaca: sem ela o rótulo disputa com o mosaico do fundo */}
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 rounded-md bg-canvas px-3 py-2">
         <span className="mono text-[11px] tracking-[.14em] text-[var(--accent)]">{num}</span>
         <h2 className="tag-line text-ink">{titulo}</h2>
         <span className="hidden h-px flex-1 bg-rule sm:block" aria-hidden="true" />

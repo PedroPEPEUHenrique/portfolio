@@ -6,7 +6,7 @@ import { Marca } from './bits';
 const SELOS = {
   'Full stack': 'var(--color-green)',
   'Biblioteca': 'var(--color-red)',
-  'Front': 'var(--color-amber)'
+  'Front': 'var(--color-yellow)'
 };
 
 function Campos({ campos }) {
