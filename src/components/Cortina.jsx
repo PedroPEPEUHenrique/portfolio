@@ -1,21 +1,13 @@
 import { useEffect, useState } from 'react';
 
-/* Cortina de entrada: painel escuro que cobre a tela e sobe
-   desfocando, no mesmo tempo e curva do site de referência.
-
-   Regra de segurança: ela sai sozinha por temporizador, sem depender
-   de evento nenhum. Uma cortina presa deixaria o site inacessível,
-   então o caminho de saída nunca pode depender de algo que falhe. */
-
-const ESPERA = 900;   // tempo à mostra
-const SAIDA = 980;    // duração da subida, igual à do keyframe
+const ESPERA = 900;
+const SAIDA = 980;
 
 export default function Cortina() {
   const [saindo, setSaindo] = useState(false);
   const [fim, setFim] = useState(false);
 
   useEffect(() => {
-    /* quem pediu menos movimento não vê cortina nenhuma */
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) { setFim(true); return; }
 
     const t1 = setTimeout(() => setSaindo(true), ESPERA);
@@ -39,7 +31,6 @@ export default function Cortina() {
 
         <p className="tag-line mt-5 text-white/55">Pedro Henrique</p>
 
-        {/* barra com o brilho correndo de um lado ao outro */}
         <span className="cortina-barra mt-5 block h-px w-full bg-white/15">
           <i className="bg-[var(--color-yellow)]" />
         </span>

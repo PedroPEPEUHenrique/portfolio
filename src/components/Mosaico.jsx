@@ -1,21 +1,3 @@
-/* Fundo em mosaico cubista com as cores do short.
-
-   O ladrilho encaixa sem emenda porque as bordas opostas cortam nos
-   mesmos pontos: as laterais em y = 0, 35, 75, 120 e o topo e a base
-   em x = 0, 55, 120. Assim a peça se repete em qualquer direção sem
-   costura aparente.
-
-   Os cacos ficam translúcidos e o conteúdo mora em cartões opacos
-   por cima, então o padrão aparece nas margens e nos vãos entre as
-   seções sem nunca disputar com o texto.
-
-   A classe "respira" dá um ciclo lento de escala e saturação, o que
-   tira do padrão o ar de papel de parede parado.
-
-   No tema escuro a opacidade cai bastante: as cores cheias contra o
-   quase preto saltam muito mais do que saltavam sobre o creme, e no
-   nível anterior o padrão disputava com o texto. */
-
 const CACOS = [
   { p: '0,0 55,0 42,40 0,35', c: 'var(--color-yellow)' },
   { p: '55,0 120,0 120,35 88,48 42,40', c: 'var(--color-cyan)' },

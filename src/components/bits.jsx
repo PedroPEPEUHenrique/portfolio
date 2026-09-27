@@ -1,12 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
-/* Cabeçalho de seção. No lugar do número dentro de um quadrado
-   preto, o número fica em versalete na cor da marca e a régua
-   corre até o fim da linha. */
 export function Marca({ num, titulo, nota }) {
   return (
     <header className="mb-8 sm:mb-10" data-reveal>
-      {/* faixa opaca: sem ela o rótulo disputa com o mosaico do fundo */}
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 rounded-md bg-canvas px-3 py-2">
         <span className="mono text-[11px] tracking-[.14em] text-[var(--accent)]">{num}</span>
         <h2 className="tag-line text-ink">{titulo}</h2>
@@ -17,7 +13,6 @@ export function Marca({ num, titulo, nota }) {
   );
 }
 
-/* Marcador de item. Um traço fino vertical, não um quadrado. */
 export function Bala({ className = '' }) {
   return (
     <span
@@ -27,7 +22,6 @@ export function Bala({ className = '' }) {
   );
 }
 
-/* Conta de zero até o valor quando entra na tela. */
 export function Contador({ ate }) {
   const ref = useRef(null);
   const [n, setN] = useState(0);
@@ -58,18 +52,12 @@ export function Contador({ ate }) {
   return <span ref={ref}>{n}</span>;
 }
 
-/* Revela os blocos conforme entram na tela.
-   O IntersectionObserver é o caminho principal, mas ele não dispara
-   em todo contexto, então a checagem por geometria no scroll corre
-   junto como rede. Sem ela, um observador silencioso deixaria a
-   seção invisível para sempre. */
 export function useReveal() {
   useEffect(() => {
     const raiz = document.documentElement;
     const alvos = Array.from(document.querySelectorAll('[data-reveal], [data-media]'));
     if (!alvos.length) return;
 
-    /* só agora escondemos: se este código não rodasse, tudo ficaria à mostra */
     raiz.classList.add('armed');
 
     let pendente = false;

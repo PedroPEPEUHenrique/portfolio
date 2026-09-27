@@ -2,10 +2,6 @@ import { useEffect, useState } from 'react';
 import TextoRolante from './TextoRolante';
 import Icone from './Icones';
 
-/* Trilho fixo à esquerda, no espírito das referências: marca em
-   cima, navegação vertical no meio, canais e assinatura embaixo.
-   No celular ele vira uma barra com menu que desliza. */
-
 const SECOES = [
   { id: 'inicio', rotulo: 'Início' },
   { id: 'sobre', rotulo: 'Sobre' },
@@ -25,7 +21,6 @@ export default function Trilho() {
   const [ativa, setAtiva] = useState('inicio');
   const [aberto, setAberto] = useState(false);
 
-  /* marca a seção corrente pela posição, sem depender de observador */
   useEffect(() => {
     const alvos = SECOES.map((s) => document.getElementById(s.id)).filter(Boolean);
     if (!alvos.length) return;
@@ -54,7 +49,6 @@ export default function Trilho() {
     <aside className="fixed inset-x-0 top-0 z-50 border-b border-rule bg-deep lg:inset-y-0 lg:right-auto lg:w-[248px] lg:border-b-0 lg:border-r">
       <div className="flex h-16 items-center justify-between px-5 lg:h-auto lg:flex-col lg:items-stretch lg:px-0 lg:py-9">
 
-        {/* marca */}
         <a href="#inicio" className="flex items-center gap-3 lg:flex-col lg:gap-2 lg:px-7">
           <span className="display text-[1.35rem] leading-none">
             PEU<span className="text-[var(--color-yellow)]">.</span>
@@ -74,7 +68,6 @@ export default function Trilho() {
           </span>
         </button>
 
-        {/* navegação */}
         <nav
           className={`absolute inset-x-0 top-16 border-b border-rule bg-deep px-5 py-3 transition-transform duration-400
                       lg:static lg:mt-12 lg:block lg:border-b-0 lg:bg-transparent lg:px-0 lg:py-0 lg:transition-none
@@ -100,7 +93,6 @@ export default function Trilho() {
             );
           })}
 
-          {/* canais e assinatura, só no trilho largo */}
           <div className="mt-8 hidden px-7 lg:block">
             <span className="tag-line text-ink-faint">Siga</span>
             <div className="mt-3 flex gap-2">

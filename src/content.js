@@ -1,6 +1,3 @@
-/* Todo o conteúdo do dossiê num lugar só, para as telas
-   ficarem apenas com a composição. */
-
 export const perfil = {
   nome: 'Pedro Henrique',
   papel: 'Desenvolvedor Full Stack Júnior',

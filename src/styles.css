@@ -1,16 +1,8 @@
-/* A ordem importa: o Tailwind entra primeiro, depois os estilos
-   da HeroUI, que se apoiam nas camadas dele. */
 @import "tailwindcss";
 @import "@heroui/styles";
 
 @custom-variant dark (&:is(.dark *));
 
-/* Tema escuro. A classe "dark" no html liga o tema escuro da
-   própria HeroUI, senão os componentes dela pintariam texto escuro
-   sobre as superfícies escuras. As duas regras abaixo vêm depois
-   para que o amarelo continue sendo a primária nos dois temas: ele
-   dá 12.6:1 sobre o quase preto, e o texto do botão fica escuro em
-   cima dele, no lugar do branco padrão que seria ilegível. */
 :root,
 .dark,
 [data-theme="dark"] {
@@ -34,8 +26,6 @@
   --color-ink-faint: #6E6A62;
   --color-rule: #262A30;
 
-  /* As cores do short, clareadas para o fundo escuro. As originais
-     serviam no claro; aqui vermelho e verde davam menos de 4:1. */
   --color-yellow: #F2D02A;
   --color-cyan: #2BC0D8;
   --color-red: #E8453A;
@@ -64,15 +54,9 @@ body {
   font-size: .63rem;
 }
 
-/* cursor piscando do cargo rotativo */
 @keyframes piscar { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
 .cursor { animation: piscar 1s steps(1) infinite; }
 
-/* ---------------------------------------------------------
-   Regra de ouro: o conteúdo nasce visível. O estado escondido só
-   é armado depois que o JS confirma que sabe revelá-lo, senão uma
-   falha no script apagaria a página inteira.
-   --------------------------------------------------------- */
 [data-x], [data-reveal] { opacity: 1; }
 
 .armed [data-x] { opacity: 0; transform: translateX(-24px); }
@@ -94,14 +78,6 @@ body {
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
 }
 
-/* =========================================================
-   Movimento inspirado em sarahaliriel.work
-   Curvas e tempos conferidos no CSS do site de origem.
-   ========================================================= */
-
-/* ---- texto rolante ----
-   Duas cópias do texto ocupam a mesma célula do grid. No hover a de
-   cima sai torcendo e a de baixo entra, com atraso por caractere. */
 .rolante {
   --rol-dur: .24s;
   --rol-skew: 2deg;
@@ -123,7 +99,7 @@ body {
   0%   { transform: translate3d(0,100%,0) skewY(var(--rol-skew)) scaleY(var(--rol-escala)); }
   100% { transform: translate3d(0,0,0) skewY(0) scaleY(1); }
 }
-/* a segunda cópia começa embaixo, fora do recorte */
+
 .rolante-b .rolante-letra { transform: translate3d(0,100%,0); }
 
 .rolante-alvo:hover .rolante-a .rolante-letra,
@@ -137,8 +113,6 @@ body {
   animation-delay: calc(var(--i) * var(--rol-passo));
 }
 
-/* ---- entrada de bloco com desfoque ----
-   Mais encorpada que o fade simples: usada nos cartões. */
 .armed [data-media] { opacity: 0; transform: translateY(18px) scale(.985); filter: blur(2px); }
 .armed [data-media].in {
   opacity: 1; transform: none; filter: blur(0);
@@ -147,7 +121,6 @@ body {
               filter .56s cubic-bezier(.2,.9,.2,1);
 }
 
-/* ---- pulso de disponibilidade ---- */
 @keyframes pulso-anel {
   0%   { opacity: 0; transform: scale(.7); }
   38%  { opacity: 1; transform: scale(1); }
@@ -161,8 +134,6 @@ body {
   animation: pulso-anel 1.9s cubic-bezier(.2,.9,.2,1) infinite;
 }
 
-/* ---- respiração do mosaico ----
-   Ciclo longo e assimétrico, para não marcar um compasso óbvio. */
 @keyframes respirar {
   0%, 100% { transform: scale(.985) rotate(-.35deg); filter: saturate(1) brightness(1); }
   37%      { transform: scale(1.012) rotate(.25deg); filter: saturate(1.08) brightness(1.035); }
@@ -170,7 +141,6 @@ body {
 }
 .respira { animation: respirar 7.6s cubic-bezier(.42,0,.24,1) infinite; transform-origin: center; }
 
-/* ---- cortina de entrada ---- */
 @keyframes cortina-sobe {
   0%   { transform: translateY(0); }
   70%  { transform: translateY(-102%); }

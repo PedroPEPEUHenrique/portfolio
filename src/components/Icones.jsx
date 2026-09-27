@@ -1,13 +1,3 @@
-/* Ícones das redes em SVG embutido.
-
-   Preferi desenhar aqui a puxar uma fonte de ícones: o devicon que o
-   projeto já carrega cobre ferramentas de desenvolvimento, não traz
-   LinkedIn nem Instagram, e uma segunda biblioteca só por três
-   marcas pesaria mais do que estes caminhos.
-
-   Herdam a cor do texto via currentColor, então acompanham o hover
-   do cartão sem regra extra. */
-
 const CAMINHOS = {
   Email:
     'M1.5 5.25A2.25 2.25 0 0 1 3.75 3h16.5a2.25 2.25 0 0 1 2.25 2.25v.38l-10.5 6.06L1.5 5.63v-.38Z' +

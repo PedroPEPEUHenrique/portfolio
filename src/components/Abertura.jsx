@@ -3,8 +3,6 @@ import { Button } from '@heroui/react';
 import { perfil } from '../content';
 import { Contador } from './bits';
 
-/* Cargo que se escreve e se apaga sozinho, com o cursor piscando,
-   igual ao das referências. */
 const CARGOS = ['Full Stack Júnior', 'Frontend com React', 'APIs em camadas', 'Docker e CI/CD'];
 
 function CargoRotativo() {
@@ -46,7 +44,6 @@ export default function Abertura() {
         Olá, eu sou
       </p>
 
-      {/* nome em dois pesos, como nas referências */}
       <h1 className="mt-5" data-x style={{ '--d': '70ms' }}>
         <span className="block text-[2.1rem] font-light tracking-[.08em] text-ink-soft sm:text-[2.6rem]">
           PEDRO

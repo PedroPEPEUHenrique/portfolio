@@ -2,7 +2,6 @@ import { Card, Chip, Button, Tabs, Alert } from '@heroui/react';
 import { projetos } from '../content';
 import { Marca } from './bits';
 
-/* o escopo do projeto define a cor do selo */
 const SELOS = {
   'Full stack': 'var(--color-green)',
   'Biblioteca': 'var(--color-red)',
@@ -31,8 +30,6 @@ function Campos({ campos }) {
   );
 }
 
-/* As três camadas do Lanche Expresso viram abas: cada uma conta
-   o seu papel e em qual repositório mora. */
 function Camadas({ camadas }) {
   return (
     <Tabs defaultSelectedKey={camadas[0].nome} className="mt-5">
@@ -43,7 +40,6 @@ function Camadas({ camadas }) {
               <span className="size-2 rounded-full" style={{ background: c.cor }} aria-hidden="true" />
               {c.nome}
             </span>
-            {/* o indicador vive dentro da aba e escorrega entre elas */}
             <Tabs.Indicator />
           </Tabs.Tab>
         ))}
@@ -84,7 +80,6 @@ function Ficha({ p }) {
       <Card.Content>
         <p className="max-w-[70ch] text-[.92rem] leading-relaxed text-ink-soft">{p.resumo}</p>
 
-        {/* o veredito de arquitetura é o que este dossiê existe para mostrar */}
         <Alert variant="soft" className="mt-6">
           <Alert.Content>
             <Alert.Title className="tag-line">Modelo arquitetural</Alert.Title>

@@ -4,9 +4,6 @@ import { Marca } from './bits';
 import TextoRolante from './TextoRolante';
 import Icone from './Icones';
 
-/* ---------------------------------------------------------
-   Sobre: texto à esquerda, ficha à direita
-   --------------------------------------------------------- */
 export function Sobre() {
   return (
     <section id="sobre" className="py-16 sm:py-24">
@@ -36,9 +33,6 @@ export function Sobre() {
   );
 }
 
-/* ---------------------------------------------------------
-   Competências: barras de domínio, como nas fichas de currículo
-   --------------------------------------------------------- */
 export function Competencias() {
   return (
     <section id="competencias" className="py-16 sm:py-24">
@@ -56,7 +50,6 @@ export function Competencias() {
             </div>
             <p className="tag-line mt-2 text-ink-faint">{c.nota}</p>
 
-            {/* barra fina, no estilo das fichas das referências */}
             <div className="mt-4 h-[3px] w-full overflow-hidden rounded-full bg-rule">
               <span
                 className="block h-full rounded-full bg-[var(--accent)] transition-[width] duration-1000 ease-out"
@@ -83,9 +76,6 @@ export function Competencias() {
   );
 }
 
-/* ---------------------------------------------------------
-   Processo: linha do tempo vertical
-   --------------------------------------------------------- */
 export function Processo() {
   return (
     <section id="processo" className="py-16 sm:py-24">
@@ -94,7 +84,6 @@ export function Processo() {
       <ol className="relative ml-3 border-l border-rule pl-8 sm:ml-4 sm:pl-10">
         {processo.map((p) => (
           <li key={p.num} className="relative pb-9 last:pb-0" data-reveal>
-            {/* marco sobre a linha */}
             <span
               className="absolute -left-[calc(2rem+1px)] top-1 grid size-[26px] -translate-x-1/2 place-items-center
                          rounded-full border border-rule bg-canvas sm:-left-[calc(2.5rem+1px)]"
@@ -112,9 +101,6 @@ export function Processo() {
   );
 }
 
-/* ---------------------------------------------------------
-   Contato: cartões de canal e rodapé
-   --------------------------------------------------------- */
 export function Contato() {
   return (
     <section id="contato" className="py-16 sm:py-24">
