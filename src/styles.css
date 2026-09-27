@@ -5,13 +5,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Paleta tirada do short: vermelho, ciano, amarelo e verde sobre
-   base preta. O verde é a primária, pois é a que a HeroUI usa para
-   derivar botão, chip, aba e medidor, e é legível no claro. Os
-   outros três entram como código de camada, e qualquer bloco pode
-   reescrever --accent para a biblioteca assumir a cor dali. */
-:root {
-  --accent: #167D38;
+/* Tema escuro. A classe "dark" no html liga o tema escuro da
+   própria HeroUI, senão os componentes dela pintariam texto escuro
+   sobre as superfícies escuras. As duas regras abaixo vêm depois
+   para que o amarelo continue sendo a primária nos dois temas: ele
+   dá 12.6:1 sobre o quase preto, e o texto do botão fica escuro em
+   cima dele, no lugar do branco padrão que seria ilegível. */
+:root,
+.dark,
+[data-theme="dark"] {
+  --accent: #F2D02A;
+  --accent-foreground: #0D0F12;
   --radius: 6px;
 }
 
@@ -20,25 +24,22 @@
   --font-display: 'Archivo Black', 'Archivo', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 
-  /* a página tem um tom de fundo e os blocos flutuam em branco */
-  /* creme puxado para o amarelo do short, no lugar do cinza frio */
-  --color-canvas: #F8F2E0;
-  --color-surface: #ffffff;
-  --color-deep: #14161A;
+  --color-canvas: #0D0F12;
+  --color-surface: #14171B;
+  --color-surface-2: #1A1E23;
+  --color-deep: #08090B;
 
-  --color-ink: #14161A;
-  --color-ink-soft: #55514A;
-  --color-ink-faint: #8A857A;
-  --color-rule: #E4DCC6;
+  --color-ink: #F2F0EA;
+  --color-ink-soft: #A8A49B;
+  --color-ink-faint: #6E6A62;
+  --color-rule: #262A30;
 
-  /* Cores cheias do short. Regra: amarelo e ciano só entram como
-     preenchimento. Sobre o creme o amarelo dá 1.5:1 e o ciano 2.6:1,
-     então nenhum dos dois pode virar texto no claro. Vermelho (6.0:1)
-     e verde (4.7:1) passam e podem ser texto. */
-  --color-yellow: #E3C51B;
-  --color-cyan: #1CA5BB;
-  --color-red: #B81414;
-  --color-green: #167D38;
+  /* As cores do short, clareadas para o fundo escuro. As originais
+     serviam no claro; aqui vermelho e verde davam menos de 4:1. */
+  --color-yellow: #F2D02A;
+  --color-cyan: #2BC0D8;
+  --color-red: #E8453A;
+  --color-green: #2FB85F;
 }
 
 html {
@@ -56,7 +57,6 @@ body {
 .display { font-family: var(--font-display); font-weight: 400; letter-spacing: -.02em; line-height: 1.06; }
 .mono { font-family: var(--font-mono); }
 
-/* rótulo de seção, em versalete espaçado */
 .tag-line {
   font-family: var(--font-mono);
   text-transform: uppercase;
@@ -64,13 +64,15 @@ body {
   font-size: .63rem;
 }
 
+/* cursor piscando do cargo rotativo */
+@keyframes piscar { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+.cursor { animation: piscar 1s steps(1) infinite; }
+
 /* ---------------------------------------------------------
-   Movimento lateral, discreto. Só entra depois que a página
-   confirma o JS, para nada sumir se o script falhar.
-   --------------------------------------------------------- */
-/* Regra de ouro: o conteúdo nasce visível. O estado escondido só
+   Regra de ouro: o conteúdo nasce visível. O estado escondido só
    é armado depois que o JS confirma que sabe revelá-lo, senão uma
-   falha no script apagaria a página inteira. */
+   falha no script apagaria a página inteira.
+   --------------------------------------------------------- */
 [data-x], [data-reveal] { opacity: 1; }
 
 .armed [data-x] { opacity: 0; transform: translateX(-24px); }
@@ -90,4 +92,113 @@ body {
   html { scroll-behavior: auto; }
   .armed [data-x], .armed [data-reveal] { opacity: 1 !important; transform: none !important; }
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+}
+
+/* =========================================================
+   Movimento inspirado em sarahaliriel.work
+   Curvas e tempos conferidos no CSS do site de origem.
+   ========================================================= */
+
+/* ---- texto rolante ----
+   Duas cópias do texto ocupam a mesma célula do grid. No hover a de
+   cima sai torcendo e a de baixo entra, com atraso por caractere. */
+.rolante {
+  --rol-dur: .24s;
+  --rol-skew: 2deg;
+  --rol-escala: 1.025;
+  --rol-passo: 12ms;
+  display: inline-grid;
+  overflow: hidden;
+  vertical-align: top;
+  line-height: inherit;
+}
+.rolante-face { grid-area: 1 / 1; display: inline-flex; white-space: pre; }
+.rolante-letra { display: inline-block; will-change: transform; }
+
+@keyframes rolar-para-fora {
+  0%   { transform: translate3d(0,0,0) skewY(0) scaleY(1); }
+  100% { transform: translate3d(0,-100%,0) skewY(calc(var(--rol-skew) * -1)) scaleY(var(--rol-escala)); }
+}
+@keyframes rolar-para-dentro {
+  0%   { transform: translate3d(0,100%,0) skewY(var(--rol-skew)) scaleY(var(--rol-escala)); }
+  100% { transform: translate3d(0,0,0) skewY(0) scaleY(1); }
+}
+/* a segunda cópia começa embaixo, fora do recorte */
+.rolante-b .rolante-letra { transform: translate3d(0,100%,0); }
+
+.rolante-alvo:hover .rolante-a .rolante-letra,
+.rolante-alvo:focus-visible .rolante-a .rolante-letra {
+  animation: rolar-para-fora var(--rol-dur) cubic-bezier(.22,1,.36,1) both;
+  animation-delay: calc(var(--i) * var(--rol-passo));
+}
+.rolante-alvo:hover .rolante-b .rolante-letra,
+.rolante-alvo:focus-visible .rolante-b .rolante-letra {
+  animation: rolar-para-dentro var(--rol-dur) cubic-bezier(.22,1,.36,1) both;
+  animation-delay: calc(var(--i) * var(--rol-passo));
+}
+
+/* ---- entrada de bloco com desfoque ----
+   Mais encorpada que o fade simples: usada nos cartões. */
+.armed [data-media] { opacity: 0; transform: translateY(18px) scale(.985); filter: blur(2px); }
+.armed [data-media].in {
+  opacity: 1; transform: none; filter: blur(0);
+  transition: opacity .56s cubic-bezier(.2,.9,.2,1),
+              transform .56s cubic-bezier(.2,.9,.2,1),
+              filter .56s cubic-bezier(.2,.9,.2,1);
+}
+
+/* ---- pulso de disponibilidade ---- */
+@keyframes pulso-anel {
+  0%   { opacity: 0; transform: scale(.7); }
+  38%  { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2.2); }
+}
+.pulso { position: relative; }
+.pulso::after {
+  content: ""; position: absolute; inset: 0;
+  border-radius: 999px;
+  background: currentColor;
+  animation: pulso-anel 1.9s cubic-bezier(.2,.9,.2,1) infinite;
+}
+
+/* ---- respiração do mosaico ----
+   Ciclo longo e assimétrico, para não marcar um compasso óbvio. */
+@keyframes respirar {
+  0%, 100% { transform: scale(.985) rotate(-.35deg); filter: saturate(1) brightness(1); }
+  37%      { transform: scale(1.012) rotate(.25deg); filter: saturate(1.08) brightness(1.035); }
+  71%      { transform: scale(.997) rotate(.12deg); filter: saturate(1.03) brightness(1.015); }
+}
+.respira { animation: respirar 7.6s cubic-bezier(.42,0,.24,1) infinite; transform-origin: center; }
+
+/* ---- cortina de entrada ---- */
+@keyframes cortina-sobe {
+  0%   { transform: translateY(0); }
+  70%  { transform: translateY(-102%); }
+  100% { transform: translateY(-120%); }
+}
+@keyframes barra-corre {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+@keyframes ponto-pulsa {
+  0%   { transform: scale(1); box-shadow: 0 0 0 10px rgba(227,197,27,.12); }
+  50%  { transform: scale(1.35); box-shadow: 0 0 0 16px rgba(227,197,27,.06); }
+  100% { transform: scale(1); box-shadow: 0 0 0 10px rgba(227,197,27,.12); }
+}
+.cortina {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; place-items: center;
+  background: var(--color-deep);
+}
+.cortina.sai { animation: cortina-sobe .98s cubic-bezier(.16,1,.22,1) forwards; }
+.cortina-barra { overflow: hidden; }
+.cortina-barra i { display: block; height: 100%; width: 100%; animation: barra-corre .9s cubic-bezier(.2,.9,.2,1) infinite; }
+.cortina-ponto { animation: ponto-pulsa 1.2s cubic-bezier(.2,.9,.2,1) infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rolante-alvo:hover .rolante-letra,
+  .rolante-alvo:focus-visible .rolante-letra { animation: none !important; }
+  .rolante-b { display: none; }
+  .armed [data-media] { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .respira, .pulso::after, .cortina-barra i, .cortina-ponto { animation: none !important; }
 }

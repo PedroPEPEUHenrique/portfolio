@@ -66,7 +66,7 @@ export function Contador({ ate }) {
 export function useReveal() {
   useEffect(() => {
     const raiz = document.documentElement;
-    const alvos = Array.from(document.querySelectorAll('[data-reveal]'));
+    const alvos = Array.from(document.querySelectorAll('[data-reveal], [data-media]'));
     if (!alvos.length) return;
 
     /* só agora escondemos: se este código não rodasse, tudo ficaria à mostra */

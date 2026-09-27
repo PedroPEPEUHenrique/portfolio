@@ -62,7 +62,7 @@ function Camadas({ camadas }) {
 
 function Ficha({ p }) {
   return (
-    <Card variant="default" data-reveal className="overflow-hidden bg-surface">
+    <Card variant="default" data-media className="overflow-hidden border-rule bg-surface">
       <Card.Header>
         <div className="flex flex-wrap items-start gap-x-4 gap-y-2">
           <span className="mono pt-2 text-[10.5px] tracking-[.12em] text-ink-faint">{p.num}</span>
@@ -133,8 +133,8 @@ function Ficha({ p }) {
 
 export default function Projetos() {
   return (
-    <section id="projetos" className="py-14 sm:py-20">
-      <Marca num="01" titulo="Projetos" nota="quatro escopos, quatro arquiteturas" />
+    <section id="projetos" className="py-16 sm:py-24">
+      <Marca num="02" titulo="Projetos" nota="quatro escopos, quatro arquiteturas" />
       <div className="grid gap-6">
         {projetos.map((p) => <Ficha key={p.id} p={p} />)}
       </div>

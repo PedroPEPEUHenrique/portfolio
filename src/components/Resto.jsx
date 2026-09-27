@@ -1,121 +1,31 @@
-import { Chip, Button, Meter } from '@heroui/react';
+import { Chip, Button } from '@heroui/react';
 import { competencias, processo, sobre, contatos } from '../content';
-import { Marca, Bala } from './bits';
-
-/* As três cores se revezam ao longo das etapas, mas só na barra
-   do topo: o âmbar tem 1.8:1 sobre branco e reprovaria como texto. */
-const CICLO = [
-  'var(--color-yellow)', 'var(--color-green)',
-  'var(--color-cyan)', 'var(--color-red)'
-];
+import { Marca } from './bits';
+import TextoRolante from './TextoRolante';
+import Icone from './Icones';
 
 /* ---------------------------------------------------------
-   02 · Competências
-   Formato de ficha técnica: rótulo à esquerda, conteúdo à
-   direita, uma linha por camada.
-   --------------------------------------------------------- */
-export function Competencias() {
-  return (
-    <section id="competencias" className="py-14 sm:py-20">
-      <Marca num="02" titulo="Competências" nota="o que eu opero em cada camada" />
-
-      <div className="overflow-hidden rounded-lg border border-rule bg-surface">
-        {competencias.map((c, i) => (
-          <article
-            key={c.id}
-            data-reveal
-            style={{ '--accent': c.cor }}
-            className={`grid gap-6 p-6 sm:p-8 lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)] lg:gap-10
-                        ${i ? 'border-t border-rule' : ''}`}
-          >
-            <div>
-              <h3 className="display flex items-center gap-2.5 text-[1.1rem]">
-                <span className="h-4 w-1 rounded-full bg-[var(--accent)]" aria-hidden="true" />
-                {c.titulo}
-              </h3>
-              <p className="tag-line mt-1.5 leading-[1.7] text-ink-faint">{c.nota}</p>
-
-              <Meter value={c.nivel} aria-label={`Domínio em ${c.titulo}`} className="mt-5 max-w-[220px]">
-                <div className="flex items-baseline justify-between">
-                  <span className="tag-line text-ink-faint">domínio</span>
-                  <Meter.Output className="mono text-[10px] text-ink-soft" />
-                </div>
-                <Meter.Track className="mt-2"><Meter.Fill /></Meter.Track>
-              </Meter>
-
-              <div className="mt-5 flex flex-wrap items-center gap-3 text-[18px]">
-                {c.logos.map((l) => <i key={l} className={l} />)}
-              </div>
-            </div>
-
-            <ul className="grid gap-y-3 self-center sm:grid-cols-2 sm:gap-x-8">
-              {c.itens.map((t) => (
-                <li key={t} className="flex gap-3 text-[.87rem] leading-relaxed text-ink-soft">
-                  <Bala />
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* ---------------------------------------------------------
-   03 · Processo
-   Formato de trilha horizontal, cinco etapas lado a lado.
-   --------------------------------------------------------- */
-export function Processo() {
-  return (
-    <section id="processo" className="py-14 sm:py-20">
-      <Marca num="03" titulo="Processo" nota="do primeiro contato ao link no ar" />
-
-      {/* um único gatilho de revelação no bloco todo: com um por
-          etapa, uma falha deixaria a moldura cinza sem os itens */}
-      <ol
-        data-reveal
-        className="grid gap-px overflow-hidden rounded-lg border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-5"
-      >
-        {processo.map((p, i) => (
-          <li
-            key={p.num}
-            className="relative bg-surface p-6 pt-7"
-            style={{ '--accent': CICLO[i % CICLO.length] }}
-          >
-            <span className="absolute inset-x-0 top-0 h-[3px] bg-[var(--accent)]" aria-hidden="true" />
-            <span className="mono text-[11px] tracking-[.14em] text-ink-faint">{p.num}</span>
-            <h3 className="display mt-3 text-[1rem]">{p.titulo}</h3>
-            <p className="mt-2 text-[.84rem] leading-relaxed text-ink-soft">{p.texto}</p>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
-}
-
-/* ---------------------------------------------------------
-   04 · Sobre
+   Sobre: texto à esquerda, ficha à direita
    --------------------------------------------------------- */
 export function Sobre() {
   return (
-    <section id="sobre" className="py-14 sm:py-20">
-      <Marca num="04" titulo="Sobre" nota="de onde vem o meu jeito de programar" />
+    <section id="sobre" className="py-16 sm:py-24">
+      <Marca num="01" titulo="Sobre" nota="de onde vem o meu jeito de programar" />
 
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,.85fr)]" data-reveal>
-        <div className="rounded-lg border border-rule bg-surface p-7 sm:p-9">
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,.85fr)] lg:gap-14" data-reveal>
+        <div>
           {sobre.paragrafos.map((p, i) => (
-            <p key={i} className="mb-4 max-w-[64ch] text-[.93rem] leading-relaxed text-ink-soft last:mb-0">{p}</p>
+            <p key={i} className="mb-4 max-w-[64ch] text-[.94rem] leading-relaxed text-ink-soft last:mb-0">{p}</p>
           ))}
           <div className="mt-7 flex flex-wrap gap-2">
             {sobre.marcas.map((m) => <Chip key={m} variant="soft" size="sm">{m}</Chip>)}
           </div>
+          <Button as="a" href="#contato" variant="primary" className="mt-9">Vamos conversar</Button>
         </div>
 
         <dl className="h-fit overflow-hidden rounded-lg border border-rule bg-surface">
           {sobre.fatos.map((f, i) => (
-            <div key={f.chave} className={`px-7 py-4 ${i ? 'border-t border-rule' : ''}`}>
+            <div key={f.chave} className={`px-6 py-4 ${i ? 'border-t border-rule' : ''}`}>
               <dt className="tag-line text-ink-faint">{f.chave}</dt>
               <dd className="mt-1.5 text-[.88rem] font-semibold">{f.valor}</dd>
             </div>
@@ -127,55 +37,131 @@ export function Sobre() {
 }
 
 /* ---------------------------------------------------------
-   05 · Contato
-   Faixa escura para fechar a página com peso.
+   Competências: barras de domínio, como nas fichas de currículo
+   --------------------------------------------------------- */
+export function Competencias() {
+  return (
+    <section id="competencias" className="py-16 sm:py-24">
+      <Marca num="03" titulo="Stack" nota="o que eu opero em cada camada" />
+
+      <div className="grid gap-10 lg:grid-cols-2 lg:gap-x-16">
+        {competencias.map((c) => (
+          <article key={c.id} data-reveal style={{ '--accent': c.cor }}>
+            <div className="flex items-baseline justify-between gap-4">
+              <h3 className="display flex items-center gap-2.5 text-[1.05rem]">
+                <span className="h-4 w-1 rounded-full bg-[var(--accent)]" aria-hidden="true" />
+                {c.titulo}
+              </h3>
+              <span className="mono text-[11px] text-ink-faint">{c.nivel}%</span>
+            </div>
+            <p className="tag-line mt-2 text-ink-faint">{c.nota}</p>
+
+            {/* barra fina, no estilo das fichas das referências */}
+            <div className="mt-4 h-[3px] w-full overflow-hidden rounded-full bg-rule">
+              <span
+                className="block h-full rounded-full bg-[var(--accent)] transition-[width] duration-1000 ease-out"
+                style={{ width: `${c.nivel}%` }}
+              />
+            </div>
+
+            <ul className="mt-5 grid gap-y-2.5">
+              {c.itens.map((t) => (
+                <li key={t} className="flex gap-3 text-[.86rem] leading-relaxed text-ink-soft">
+                  <span className="mt-[.55rem] h-1 w-1 shrink-0 rounded-full bg-[var(--accent)]" aria-hidden="true" />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-5 flex flex-wrap items-center gap-3 text-[18px] opacity-80">
+              {c.logos.map((l) => <i key={l} className={l} />)}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------
+   Processo: linha do tempo vertical
+   --------------------------------------------------------- */
+export function Processo() {
+  return (
+    <section id="processo" className="py-16 sm:py-24">
+      <Marca num="04" titulo="Processo" nota="do primeiro contato ao link no ar" />
+
+      <ol className="relative ml-3 border-l border-rule pl-8 sm:ml-4 sm:pl-10">
+        {processo.map((p) => (
+          <li key={p.num} className="relative pb-9 last:pb-0" data-reveal>
+            {/* marco sobre a linha */}
+            <span
+              className="absolute -left-[calc(2rem+1px)] top-1 grid size-[26px] -translate-x-1/2 place-items-center
+                         rounded-full border border-rule bg-canvas sm:-left-[calc(2.5rem+1px)]"
+              aria-hidden="true"
+            >
+              <span className="size-1.5 rounded-full bg-[var(--color-yellow)]" />
+            </span>
+            <span className="mono text-[11px] tracking-[.14em] text-[var(--color-yellow)]">{p.num}</span>
+            <h3 className="display mt-2 text-[1.05rem]">{p.titulo}</h3>
+            <p className="mt-2 max-w-[60ch] text-[.88rem] leading-relaxed text-ink-soft">{p.texto}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------
+   Contato: cartões de canal e rodapé
    --------------------------------------------------------- */
 export function Contato() {
   return (
-    <section id="contato" className="pb-12 pt-14 sm:pb-16 sm:pt-20">
+    <section id="contato" className="py-16 sm:py-24">
       <Marca num="05" titulo="Contato" nota="email, LinkedIn e GitHub" />
 
-      <div className="overflow-hidden rounded-lg bg-deep text-white" data-reveal>
-        <div className="grid gap-8 p-8 sm:p-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-14 lg:p-12">
-          <div>
-            <h3 className="display max-w-[16ch] text-[1.6rem] sm:text-[2.1rem]">
-              Me conta a ideia. Eu respondo com o caminho.
-            </h3>
-            <p className="mt-4 max-w-[46ch] text-[.9rem] leading-relaxed text-white/60">
-              Disponível para novos projetos, em Goiânia ou remoto. Respondo o mais rápido possível.
-            </p>
-          </div>
+      <h2 className="display max-w-[18ch] text-[1.7rem] sm:text-[2.4rem]" data-reveal>
+        Me conta a ideia.{' '}
+        <span className="text-[var(--color-yellow)]">Eu respondo com o caminho.</span>
+      </h2>
 
-          <ul className="self-center">
-            {contatos.map((c, i) => (
-              <li key={c.chave} className={i ? 'border-t border-white/12' : ''}>
-                <a
-                  href={c.href}
-                  target={c.href.startsWith('mailto') ? undefined : '_blank'}
-                  rel="noopener"
-                  className="group flex items-center gap-5 py-3.5 transition-colors hover:text-white"
-                >
-                  <span className="tag-line w-20 shrink-0 text-white/40">{c.chave}</span>
-                  <span className="min-w-0 flex-1 truncate text-[.95rem] font-semibold text-white/85 transition-colors group-hover:text-white">
-                    {c.valor}
-                  </span>
-                  <span className="mono shrink-0 text-white/35 transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <ul className="mt-10 grid gap-3 sm:grid-cols-2" data-reveal>
+        {contatos.map((c) => (
+          <li key={c.chave}>
+            <a
+              href={c.href}
+              target={c.href.startsWith('mailto') ? undefined : '_blank'}
+              rel="noopener"
+              className="rolante-alvo group flex items-center gap-4 rounded-lg border border-rule bg-surface px-5 py-4
+                         transition-colors hover:border-[var(--color-yellow)]"
+            >
+              <span className="grid size-10 shrink-0 place-items-center rounded-md border border-rule text-ink-faint
+                               transition-colors group-hover:border-[var(--color-yellow)] group-hover:text-[var(--color-yellow)]">
+                <Icone nome={c.chave} />
+              </span>
+              <span className="min-w-0">
+                <span className="tag-line block text-ink-faint">{c.chave}</span>
+                <span className="mt-1 block truncate text-[.92rem] font-semibold">
+                  <TextoRolante intensidade="forte">{c.valor}</TextoRolante>
+                </span>
+              </span>
+              <span className="mono ml-auto shrink-0 text-ink-faint transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
 
-        <div className="flex flex-wrap items-center gap-4 border-t border-white/12 px-8 py-5 sm:px-10 lg:px-12">
-          <span className="mono grid size-9 place-items-center rounded-md border border-white/25 text-[11px]">PEU</span>
-          <span className="flex-1 text-[11.5px] text-white/45">
-            © 2026 Pedro Henrique · Desenvolvedor Full Stack Júnior
-          </span>
-          <a href="#perfil" className="tag-line text-white/55 transition-colors hover:text-white">Voltar ao topo</a>
-        </div>
-      </div>
+      <footer className="mt-16 flex flex-wrap items-center gap-4 border-t border-rule pt-7">
+        <span className="display text-[1.1rem]">PEU<span className="text-[var(--color-yellow)]">.</span></span>
+        <span className="flex-1 text-[11.5px] text-ink-faint">
+          © 2026 Pedro Henrique · Desenvolvedor Full Stack Júnior
+        </span>
+        <a href="#inicio" className="rolante-alvo tag-line text-ink-faint transition-colors hover:text-ink">
+          <TextoRolante intensidade="leve">Voltar ao topo</TextoRolante>
+        </a>
+      </footer>
     </section>
   );
 }

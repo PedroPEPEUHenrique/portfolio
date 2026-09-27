@@ -1,75 +1,97 @@
+import { useEffect, useState } from 'react';
 import { Button } from '@heroui/react';
 import { perfil } from '../content';
 import { Contador } from './bits';
 
+/* Cargo que se escreve e se apaga sozinho, com o cursor piscando,
+   igual ao das referências. */
+const CARGOS = ['Full Stack Júnior', 'Frontend com React', 'APIs em camadas', 'Docker e CI/CD'];
+
+function CargoRotativo() {
+  const [i, setI] = useState(0);
+  const [n, setN] = useState(0);
+  const [apagando, setApagando] = useState(false);
+
+  useEffect(() => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { setN(CARGOS[0].length); return; }
+    const alvo = CARGOS[i];
+    const pronto = n === alvo.length;
+    const vazio = n === 0;
+
+    let espera = apagando ? 45 : 80;
+    if (pronto && !apagando) espera = 1600;
+    if (vazio && apagando) espera = 260;
+
+    const t = setTimeout(() => {
+      if (pronto && !apagando) { setApagando(true); return; }
+      if (vazio && apagando) { setApagando(false); setI((v) => (v + 1) % CARGOS.length); return; }
+      setN((v) => v + (apagando ? -1 : 1));
+    }, espera);
+    return () => clearTimeout(t);
+  }, [i, n, apagando]);
+
+  return (
+    <span>
+      {CARGOS[i].slice(0, n)}
+      <span className="cursor text-[var(--color-yellow)]" aria-hidden="true">|</span>
+    </span>
+  );
+}
+
 export default function Abertura() {
   return (
-    <header id="perfil" className="pt-10 sm:pt-16">
+    <section id="inicio" className="relative flex min-h-[calc(100svh-4rem)] flex-col justify-center py-16 lg:min-h-svh lg:py-20">
 
-      {/* cartão de apresentação: painel escuro à esquerda com a
-          identidade, texto e números no claro à direita */}
-      <div className="grid overflow-hidden rounded-lg border border-rule bg-surface lg:grid-cols-[minmax(0,.9fr)_minmax(0,1.1fr)]">
+      <p className="tag-line text-ink-faint" data-x style={{ '--d': '0ms' }}>
+        Olá, eu sou
+      </p>
 
-        <div className="relative bg-deep p-8 text-white sm:p-10 lg:p-12" data-x style={{ '--d': '0ms' }}>
-          {/* as quatro cores do short assinam o topo do painel */}
-          <span className="absolute inset-x-0 top-0 flex h-1" aria-hidden="true">
-            <i className="flex-1 bg-[var(--color-yellow)]" />
-            <i className="flex-1 bg-[var(--color-green)]" />
-            <i className="flex-1 bg-[var(--color-cyan)]" />
-            <i className="flex-1 bg-[var(--color-red)]" />
-          </span>
-          <div className="flex items-center gap-3.5">
-            <span className="mono grid h-11 w-11 shrink-0 place-items-center rounded-md border border-white/25 text-[12px] tracking-[.06em]">
-              PEU
-            </span>
-            <div className="leading-tight">
-              <strong className="block text-[15px] font-bold tracking-[-.01em]">{perfil.nome}</strong>
-              <span className="tag-line text-white/55">{perfil.papel}</span>
-            </div>
-          </div>
+      {/* nome em dois pesos, como nas referências */}
+      <h1 className="mt-5" data-x style={{ '--d': '70ms' }}>
+        <span className="block text-[2.1rem] font-light tracking-[.08em] text-ink-soft sm:text-[2.6rem]">
+          PEDRO
+        </span>
+        <span className="display block text-[3.2rem] leading-[.95] sm:text-[4.6rem] lg:text-[5.6rem]">
+          HENRIQUE
+        </span>
+      </h1>
 
-          <p className="mt-8 text-[.92rem] leading-relaxed text-white/70">{perfil.resumo}</p>
+      <p
+        className="mono mt-5 text-[.95rem] tracking-[.04em] text-ink-soft sm:text-[1.1rem]"
+        data-x style={{ '--d': '140ms' }}
+      >
+        <CargoRotativo />
+      </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            {/* chip próprio: o "soft" da HeroUI some sobre o escuro */}
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[.06] px-3 py-1 text-[11.5px] text-white/85">
-              <span className="size-1.5 rounded-full bg-[var(--color-yellow)]" />
-              {perfil.status}
-            </span>
-            <span className="tag-line text-white/40">Goiânia, GO</span>
-          </div>
+      <p className="mt-7 max-w-[56ch] text-[.95rem] leading-relaxed text-ink-soft" data-x style={{ '--d': '200ms' }}>
+        {perfil.resumo}
+      </p>
 
-          <div className="mt-8 flex flex-wrap gap-2.5">
-            <Button as="a" href="#projetos" variant="primary" size="sm">Ver projetos</Button>
-            <Button
-              as="a"
-              href="mailto:flashpedro123@gmail.com"
-              variant="outline"
-              size="sm"
-              className="border-white/30 text-white hover:bg-white/10"
-            >
-              Falar comigo
-            </Button>
-          </div>
-        </div>
-
-        <div className="flex flex-col justify-between gap-10 p-8 sm:p-10 lg:p-12" data-x style={{ '--d': '90ms' }}>
-          <h1 className="display text-[1.85rem] leading-[1.1] sm:text-[2.5rem] lg:text-[2.8rem]">
-            {perfil.frase}
-          </h1>
-
-          <dl className="grid grid-cols-2 gap-x-6 gap-y-7 border-t border-rule pt-8 sm:grid-cols-4 lg:gap-x-4">
-            {perfil.numeros.map((n) => (
-              <div key={n.rotulo}>
-                <dt className="display text-[1.7rem] leading-none">
-                  <Contador ate={n.valor} />
-                </dt>
-                <dd className="tag-line mt-2 leading-[1.7] text-ink-faint">{n.rotulo}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+      <div className="mt-9 flex flex-wrap gap-3" data-x style={{ '--d': '260ms' }}>
+        <Button as="a" href="#projetos" variant="primary">Ver projetos</Button>
+        <Button
+          as="a"
+          href="mailto:flashpedro123@gmail.com"
+          variant="outline"
+          className="border-rule text-ink hover:border-[var(--color-yellow)]"
+        >
+          Falar comigo
+        </Button>
       </div>
-    </header>
+
+      <dl
+        className="mt-14 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-rule pt-9 sm:grid-cols-4"
+        data-x style={{ '--d': '320ms' }}
+      >
+        {perfil.numeros.map((v) => (
+          <div key={v.rotulo}>
+            <dt className="display text-[1.9rem] leading-none text-[var(--color-yellow)]">
+              <Contador ate={v.valor} />
+            </dt>
+            <dd className="tag-line mt-2.5 leading-[1.7] text-ink-faint">{v.rotulo}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
   );
 }

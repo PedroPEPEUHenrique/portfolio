@@ -7,7 +7,14 @@
 
    Os cacos ficam translúcidos e o conteúdo mora em cartões opacos
    por cima, então o padrão aparece nas margens e nos vãos entre as
-   seções sem nunca disputar com o texto. */
+   seções sem nunca disputar com o texto.
+
+   A classe "respira" dá um ciclo lento de escala e saturação, o que
+   tira do padrão o ar de papel de parede parado.
+
+   No tema escuro a opacidade cai bastante: as cores cheias contra o
+   quase preto saltam muito mais do que saltavam sobre o creme, e no
+   nível anterior o padrão disputava com o texto. */
 
 const CACOS = [
   { p: '0,0 55,0 42,40 0,35', c: 'var(--color-yellow)' },
@@ -23,7 +30,7 @@ const CACOS = [
 export default function Mosaico() {
   return (
     <div className="pointer-events-none fixed inset-0 z-0" aria-hidden="true">
-      <svg className="h-full w-full" preserveAspectRatio="none">
+      <svg className="respira h-full w-full" preserveAspectRatio="none">
         <defs>
           <pattern id="mosaico" width="120" height="120" patternUnits="userSpaceOnUse">
             <rect width="120" height="120" fill="var(--color-canvas)" />
@@ -39,7 +46,7 @@ export default function Mosaico() {
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="var(--color-canvas)" />
-        <rect width="100%" height="100%" fill="url(#mosaico)" opacity=".16" />
+        <rect width="100%" height="100%" fill="url(#mosaico)" opacity=".035" />
       </svg>
     </div>
   );

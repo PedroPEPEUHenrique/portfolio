@@ -2,8 +2,10 @@ import { useEffect } from 'react';
 import Abertura from './components/Abertura';
 import Projetos from './components/Projetos';
 import { Competencias, Processo, Sobre, Contato } from './components/Resto';
+import Trilho from './components/Trilho';
 import { useReveal } from './components/bits';
 import Mosaico from './components/Mosaico';
+import Cortina from './components/Cortina';
 
 export default function App() {
   useReveal();
@@ -18,14 +20,18 @@ export default function App() {
 
   return (
     <>
+      <Cortina />
       <Mosaico />
-      <main className="relative z-10 mx-auto max-w-[1180px] px-4 sm:px-6 lg:px-8">
+      <Trilho />
+      <main className="relative z-10 px-5 pt-16 sm:px-8 lg:ml-[248px] lg:px-14 lg:pt-0 xl:px-20">
+      <div className="mx-auto max-w-[980px]">
       <Abertura />
+      <Sobre />
       <Projetos />
       <Competencias />
       <Processo />
-      <Sobre />
       <Contato />
+        </div>
       </main>
     </>
   );
