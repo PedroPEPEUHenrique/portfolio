@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "@heroui/styles";
 
+@source not "../docs";
+
 @custom-variant dark (&:is(.dark *));
 
 :root,
